@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+}
+
+/* translate example  */
+/* Purpose: Moves an element along the X and Y axes. */
+/* Transition Specifies the transition effect for a property change. */
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    top:70px;
+    left: 50px;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* .box:hover {
+    transform: translate(100px, 100px);
+}  */
+
+
+/* .box {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    transform: translate(50px, 50px);
+} */
+
+
+.btn{
+    display: inline-block;
+    width: auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: blue;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: "👉 ";
+    position: absolute;
+    left: -20px;
+    opacity: 0;
+    transition: left 0.3s ease-in-out, opacity 0.3s;
+}
+
+/* Adding an effect after the button */
+.btn::after {
+    content: " ✔";
+    position: absolute;
+    right: -20px;
+    opacity: 0;
+    transition: right 0.3s ease-in-out, opacity 0.3s;
+}
+
+/* When hovering, reveal ::before and ::after */
+.btn:hover::before {
+    left: -1px;
+    bottom: 10px;
+    opacity: 1;
+}
+
+.btn:hover::after {
+    right: -1px;
+    bottom: 10px;
+    opacity: 1;
+}
