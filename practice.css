@@ -9,7 +9,7 @@
 /* Purpose: Moves an element along the X and Y axes. */
 /* Transition Specifies the transition effect for a property change. */
 
-.box{
+/* .box{
     width: 100px;
     height: 100px;
     background-color: red;
@@ -17,7 +17,7 @@
     top:70px;
     left: 50px;
     transition: transform 0.5s ease-in-out;
-}
+} */
 
 /* .box:hover {
     transform: translate(100px, 100px);
@@ -34,7 +34,7 @@
     transform: translate(50px, 50px);
 } */
 
-
+/* 
 .btn{
     display: inline-block;
     width: auto;
@@ -55,19 +55,19 @@
     left: -20px;
     opacity: 0;
     transition: left 0.3s ease-in-out, opacity 0.3s;
-}
+} */
 
 /* Adding an effect after the button */
-.btn::after {
+/* .btn::after {
     content: " ✔";
     position: absolute;
     right: -20px;
     opacity: 0;
     transition: right 0.3s ease-in-out, opacity 0.3s;
-}
+} */
 
 /* When hovering, reveal ::before and ::after */
-.btn:hover::before {
+/* .btn:hover::before {
     left: -1px;
     bottom: 10px;
     opacity: 1;
@@ -77,4 +77,39 @@
     right: -1px;
     bottom: 10px;
     opacity: 1;
+} */
+/* 
+:horizontal mean regular line we draw like this  *******************************
+
+:vertical line : mean opposite *
+                               *
+                               *
+                               *   
+                               */
+
+                               
+
+.container{
+    border: 2px solid black;
+    display:grid;
+    grid-template-columns: 120px 100px ;
+    grid-template-rows: 100px 100px 100px;
+}      
+
+.item {
+    border: 2px solid red;
+    height: 55px;
+    width: 55px;
+}
+.item4{
+    grid-row:1/2;
+
+    grid-column: 1/2;
+    /* means it will start form the line 1 and end in line 2 */
+    /* the above two lines also can be wirtten as  */
+
+    /* grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-row-end: 2; */
 }
