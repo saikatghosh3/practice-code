@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid-2</title>
+
+    <style>
+        /* 1st way of wirting grid  */
+   /* .container{
+   border: 2px solid black;
+   display: grid;
+   grid-template-areas: "nav nav nav"
+                         "side article article"
+                          "footer footer footer";
+   } */
+
+   /* 2nd way of writing grid  */
+
+   .container{
+    width: 80vh;  
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-columns: repeat(3,1fr); mane 1fr ke 3 bar repeat koro */
+    /* gap: 34px; */
+    /* alada alada gpa set kora jai  */
+    row-gap: 44px;
+    column-gap: 44px;
+
+    /* The grid divides the available width into three equal columns. Each column gets 1 fraction of the space. */
+    /* 1fr means "1 fraction of available space" */
+    /* columns and row dui jaigai e use kora jai  */
+   }
+
+   .item{
+     border: 2px solid red;
+     height: 55px;
+   }
+   /* Those are for first example */
+   /* .item-1{
+    grid-area: nav;
+    background-color: aqua;}
+   .item-2{
+    grid-area: side;
+    background-color: rgb(120, 120, 230);
+   }
+   .item-3{
+    grid-area: article;
+    background-color: rgb(222, 128, 128);
+   }
+   .item-4{
+    grid-area: footer;
+    background-color: rgb(134, 92, 174);
+   } */
+    </style>
+
+
+</head>
+<body>
+     <div class="container">
+    <div class="item item-1">1</div>
+    <div class="item item-2">2</div>
+    <div class="item item-3">3</div>
+    <div class="item item-4">4</div>
+
+  </div>
+
+</body>
+</html>
