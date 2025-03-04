@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox tutorial</title>
+<style>
+.container{
+    height: 80vh;
+    border: 2px solid red;
+    display: flex;
+    
+    /* by default left to right hoiye jabe mane row e thake  */
+    justify-content: center;
+    align-items: center;
+
+    /* flex-direction: column; */
+    /* eta dile item opr theke niche layout hobe:  */
+
+    /* if we have many items, and if there is a chance to overflow . we should wrap it  */
+     /* flex-wrap: wrap; */
+
+     /* note: if we have one line  (with items ) we will use [align-items:center]  */
+     /* if we have more than one line (with items) we will use [align-content: center]  */
+
+     /* flex-flow: row wrap;  */
+     /* its a combination of two property one is flex direction another one is flex-wrap: ; */
+     
+      }
+.item{
+    height: 70px;
+    width: 70px;
+    border: 2px solid black;
+    margin: 4px;
+    background-color: blueviolet;
+}
+
+</style>
+
+
+</head>
+<body>
+    
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+</body>
+</html>
