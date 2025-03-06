@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event target and values</title>
+</head>
+<body>
+    <div class="">
+        <p>This is dive</p>
+        <button id="button"> click me</button>
+        <br>
+        <input type="text" id="input" placeholder="Type here..." />
+    </div>
+    <script>
+        document.querySelector("button").addEventListener("click", function(e){
+            console.log(e.target);
+            // This logs the button element itself
+        });
+
+        document.querySelector("input").addEventListener("input", function(e){
+            console.log(e.target.value);
+        })
+    </script>
+</body>
+</html>
