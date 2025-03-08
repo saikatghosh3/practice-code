@@ -18,15 +18,18 @@
    /* 2nd way of writing grid  */
 
    .container{
-    width: 80vh;  
+    width: 80vw;  
+    height: 80vh;
     border: 2px solid black;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    /* grid-template-columns: repeat(3,1fr); mane 1fr ke 3 bar repeat koro */
+    /* grid-template-columns: 1fr 1fr 1fr; */
+     grid-template-columns: repeat(3,1fr); 
+     /* mane 1fr ke 3 bar repeat koro  */
     /* gap: 34px; */
     /* alada alada gpa set kora jai  */
-    row-gap: 44px;
-    column-gap: 44px;
+    /* row-gap: 44px; */
+    /* column-gap: 44px; */
+    gap: 50px;
 
     /* The grid divides the available width into three equal columns. Each column gets 1 fraction of the space. */
     /* 1fr means "1 fraction of available space" */
@@ -38,13 +41,14 @@
      height: 55px;
    }
    /* Those are for first example */
-   /* .item-1{
+    /* .item-1{
     grid-area: nav;
     background-color: aqua;}
+    
    .item-2{
     grid-area: side;
     background-color: rgb(120, 120, 230);
-   }
+   } 
    .item-3{
     grid-area: article;
     background-color: rgb(222, 128, 128);
@@ -52,7 +56,7 @@
    .item-4{
     grid-area: footer;
     background-color: rgb(134, 92, 174);
-   } */
+   }  */
     </style>
 
 
@@ -63,6 +67,11 @@
     <div class="item item-2">2</div>
     <div class="item item-3">3</div>
     <div class="item item-4">4</div>
+    <div class="item item-5">5</div>
+    <div class="item item-6">6</div>
+    <div class="item item-7">7</div>
+    <div class="item item-8">8</div>
+    <div class="item item-9">9</div>
 
   </div>
 

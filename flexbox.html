@@ -11,10 +11,11 @@
     display: flex;
     
     /* by default left to right hoiye jabe mane row e thake  */
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items:center; */
+    
 
-    /* flex-direction: column; */
+    flex-direction: column;
     /* eta dile item opr theke niche layout hobe:  */
 
     /* if we have many items, and if there is a chance to overflow . we should wrap it  */
@@ -26,6 +27,7 @@
      /* flex-flow: row wrap;  */
      /* its a combination of two property one is flex direction another one is flex-wrap: ; */
       /* new is gap propery ... horizontal and vertical same gap nea nebe */
+      /* gap: 40px; */
       }
 .item{
     height: 70px;
@@ -35,6 +37,27 @@
     background-color: blueviolet;
 }
 
+.container-2{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-1{
+width: 100%;
+}
+.item-2{
+width: 50%;
+height:30%;
+
+}
+.item-3{
+width: 50%;
+height:30%;
+
+}
 </style>
 
 
@@ -43,10 +66,46 @@
     
     <div class="container">
         <div class="item item-1">1</div>
+        <div class="container-2">
+            <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+        </div>
+        
+        <div class="item item-4">4</div>
+        <div class="item item-5">5</div>
+        <!-- <div class="item item-1">1</div>
         <div class="item item-2">2</div>
         <div class="item item-3">3</div>
         <div class="item item-4">4</div>
-        <div class="item">5</div>
+        <div class="item item-5">5</div>
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+        <div class="item item-4">4</div>
+        <div class="item item-5">5</div>
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+        <div class="item item-4">4</div>
+        <div class="item item-5">5</div>
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+        <div class="item item-4">4</div>
+        <div class="item item-5">5</div>
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+        <div class="item item-4">4</div>
+        <div class="item item-5">5</div>
+        <div class="item item-3">3</div>
+        <div class="item item-4">4</div>
+        <div class="item item-5">5</div>
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+        <div class="item item-4">4</div>
+        <div class="item item-5">5</div> -->
     </div>
 </body>
 </html>

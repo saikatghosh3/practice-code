@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Important topic </title>
+</head>
+<body>
+    
+<button class="button"> click here</button>
+
+
+
+<script>
+
+// call, apply, and bind are
+//  methods in JavaScript that help set the value of this inside a function.
+// examples
+// call: 
+// function greet (city){
+//     console.log(`Hello my name is ${this.name} I am form ${city}`);
+// }
+
+// const person = {name : "saikat"}
+// greet.call(person, "jashore");
+
+// call() sets this to person and passes "jashore" as an argument.
+
+// apply
+// 👉 Works like call, but takes arguments as an array.
+
+// greet.apply(person, ["dhaka"]);
+
+
+// bind
+// 👉 Returns a new function with this set to a specific value,
+//  but doesn't call it immediately.
+
+
+// const greetPerson = greet.bind(person, "Khulna");
+
+// greetPerson(); 
+
+// bind() doesn't execute the function immediately; instead, 
+// it returns a new function that we can call later.
+
+// Another bind example 
+
+//  const button = document.querySelector('button');
+// const obj = {
+//      text:"button clicked!",
+//      handleClik: function(){
+//         console.log(this.text);
+//      }
+// };
+
+// button.addEventListener("click",obj.handleClik.bind(obj) );
+
+//  bind in class method 
+// class User {
+//     constructor(name){
+//         this.name = name;
+//     }
+
+//     greet(){
+//         console.log(`Hello, my name is ${this.name}`);
+//     }
+// }
+//  const user1 = new User("saikat");
+//  const greetUser = user1.greet.bind (user1);
+
+//  setTimeout(greetUser, 1000);
+
+
+//  shallow copy & deep copy 
+
+
+
+</script>
+
+
+</body>
+</html>
