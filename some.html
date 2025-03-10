@@ -50,6 +50,7 @@
 // const obj = {
 //      text:"button clicked!",
 //      handleClik: function(){
+
 //         console.log(this.text);
 //      }
 // };
@@ -73,7 +74,129 @@
 
 
 //  shallow copy & deep copy 
+// shallow copy simple example: 
+let s1 = "sue";
+console.log(s1);
 
+let s2 = s1 ;
+console.log(s2);
+
+s2 = "bob";
+console.log(s2);
+console.log(s1);
+
+// object array function er kehtre reference anoujiye save kore. value anusare na 
+let arr1 = [1,2,3,4,5];
+let arr2 = arr1;
+arr2.push(4);
+
+console.log(arr1);
+console.log(arr2);
+//  in this way arr1 is also modified. 
+
+
+// How to avoid reference issue 
+let arr3 = [1,2,3,4];
+let arr4 = [...arr3];
+arr4.push(6);
+
+console.log(arr3);
+console.log(arr4);
+//  in this way it will remain unchanged 
+
+
+
+// Deep copy 
+// 👉 A deep copy creates a completely independent copy, including nested objects and arrays.
+// 👉 Changes in the copied object do not affect the original.
+
+const original = {
+    name : 'saikat', 
+    skills: ["HTML","css", "javaScript"]
+};
+const deepCopy = structuredClone(original);
+deepCopy.name = "jhon";
+deepCopy.skills.push("react");
+console.log(original);
+console.log(deepCopy);
+
+// ✔️ Shallow Copy → When working with simple objects that don’t have nested structures.
+// ✔️ Deep Copy → When working with complex objects where you don’t want changes in the copy to
+
+
+// Lexical scope : 
+// lexical scope means that a variable's accessibility is determine by where it is written in the code 
+// (at the time of writing, not at runtime)
+
+// 👉 Inner functions can access variables of their outer functions, but outer functions cannot access
+//  variables of their inner functions.
+
+// global scope
+// function scope,
+// block scope, 
+// nested scope
+// closure scope
+
+// Global scope: 
+let globalVar = " im global";
+
+function showGloabal (){
+    console.log(globalVar);
+}
+
+// function scope: 
+
+function example(){
+    let functionScopeVar = " i only exists inside the function";
+
+    console.log(functionScopeVar);
+}
+example();
+console.log((functionScopeVar));// ei ta accessible na.  because of functional scope.
+
+// Block scope 
+
+if (ture){
+    let blockScopedVar = " I exist only in this block";
+    console.log(blockScopedVar);
+}
+
+console.log(blockScopedVar);
+// ei jaiga accessible na.
+
+
+// closure scope 
+
+function counter (){
+    let count = 0;
+
+    return function (){
+        count ++ ;
+        console.log(count)
+    }
+}
+const increment = counter();
+
+increment ();1
+increment ();2
+increment ();3
+
+// memoization in js 
+async function fetchData(url) {
+  let cachedData = localStorage.getItem(url);
+  if (cachedData) {
+    console.log("Fetching from cache:", cachedData);
+    return JSON.parse(cachedData);
+  }
+
+  let response = await fetch(url);
+  let data = await response.json();
+  localStorage.setItem(url, JSON.stringify(data));
+  console.log("Fetching from API:", data);
+  return data;
+}
+
+fetchData("https://api.example.com/data");
 
 
 </script>
