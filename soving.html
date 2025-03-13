@@ -25,6 +25,37 @@
 
 
 
+// A recursive function is a function that calls itself in its definition to solve a problem.
+//  It breaks the problem into smaller subproblems, solving each step until a base condition is met.
+
+
+
+
+
+// 🔹 How Does Recursion Work?
+// A recursive function typically has two parts:
+
+// Base Case: The condition that stops the recursion.
+// Recursive Case: The function calls itself with a modified argument,
+//  moving towards the base case.
+
+function Countdown (n){
+    if(n< 0){
+        console.log("Done");
+        return
+    }
+ console.log(n);
+ Countdown(n-1)
+
+}
+Countdown(5);
+
+//  Trim: 
+// Remove the whitespace form before and after 
+
+let text = "    Hello world    "
+console.log(text.trim());
+
     </script>
 </body>
 </html>

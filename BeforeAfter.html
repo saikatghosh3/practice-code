@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before After Effect in css.</title>
+ <style>
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.styled-button {
+    position: relative;
+    padding: 12px 24px;
+    font-size: 18px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+/* ::before adds an icon or text before the button */
+.styled-button::before {
+    content: "🚀 ";
+    position: absolute;
+    left: 10px;
+    font-size: 16px;
+}
+
+/* ::after creates an animation effect */
+.styled-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(0);
+    transition: transform 0.3s;
+    border-radius: 5px;
+}
+
+.styled-button:hover {
+    background-color: #0056b3;
+}
+
+/* When button is clicked, expand the ::after effect */
+.styled-button:active::after {
+    transform: scale(1);
+    transition: transform 0.1s;
+}
+
+
+ </style>
+
+</head>
+<body>
+    <div class="container">
+        <button class="styled-button">click Me</button>
+    </div>
+</body>
+</html>
