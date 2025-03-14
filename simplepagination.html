@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Pagination</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+        }
+        .pagination {
+            margin-top: 20px;
+        }
+        .pagination button {
+            padding: 8px 12px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .active {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul id="content"></ul>
+        <div class="pagination" id="pagination"></div>
+    </div>
+
+    <script>
+        // Create an array with 50 items
+        let items = [];
+        for (let i = 1; i <= 50; i++) {
+            items.push("Item " + i);
+        }
+
+        let itemsPerPage = 5;
+        let currentPage = 1;
+
+        function renderItems(page) {
+            let start = (page - 1) * itemsPerPage;
+            let end = start + itemsPerPage;
+            let content = document.getElementById("content");
+            content.innerHTML = "";
+
+            for (let i = start; i < end && i < items.length; i++) {
+                let li = document.createElement("li");
+                li.textContent = items[i];
+                content.appendChild(li);
+            }
+        }
+
+        function renderPagination() {
+            let totalPages = Math.ceil(items.length / itemsPerPage);
+            let paginationDiv = document.getElementById("pagination");
+            paginationDiv.innerHTML = "";
+
+            for (let i = 1; i <= totalPages; i++) {
+                let button = document.createElement("button");
+                button.textContent = i;
+                button.onclick = function () {
+                    changePage(i);
+                };
+                if (i === currentPage) {
+                    button.classList.add("active");
+                }
+                paginationDiv.appendChild(button);
+            }
+        }
+
+        function changePage(page) {
+            
+            currentPage = page;
+            renderItems(page);
+            renderPagination();
+        }
+
+        renderItems(currentPage);
+        renderPagination();
+    </script>
+</body>
+</html>

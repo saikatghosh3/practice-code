@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+        }
+        .pagination {
+            margin-top: 20px;
+        }
+        .pagination button {
+            padding: 8px 12px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .active {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul id="content"></ul>
+        <div class="pagination" id="pagination"></div>
+    </div>
+
+    <script>
+        const items = Array.from({ length: 50 }, (_, i) => `Item ${i + 1}`);
+        const itemsPerPage = 5;
+        let currentPage = 1;
+
+        function renderItems(page) {
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            document.getElementById("content").innerHTML = items.slice(start, end)
+                .map(item => `<li>${item}</li>`).join("");
+        }
+
+        function renderPagination() {
+            const totalPages = Math.ceil(items.length / itemsPerPage);
+            let paginationHTML = '';
+            for (let i = 1; i <= totalPages; i++) {
+                paginationHTML += `<button onclick="changePage(${i})" class="${i === currentPage ? 'active' : ''}">${i}</button>`;
+            }
+            document.getElementById("pagination").innerHTML = paginationHTML;
+        }
+
+        function changePage(page) {
+            currentPage = page;
+            renderItems(page);
+            renderPagination();
+        }
+
+        renderItems(currentPage);
+        renderPagination();
+    </script>
+</body>
+</html> 
+
+
+
