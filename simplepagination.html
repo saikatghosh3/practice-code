@@ -29,23 +29,25 @@
 </head>
 <body>
     <div class="container">
-        <ul id="content"></ul>
+        <ul id="content" style="list-style: none;"></ul>
         <div class="pagination" id="pagination"></div>
     </div>
 
     <script>
         // Create an array with 50 items
         let items = [];
-        for (let i = 1; i <= 50; i++) {
+        for (let i = 1; i <= 49; i++) {
             items.push("Item " + i);
         }
 
         let itemsPerPage = 5;
         let currentPage = 1;
 
+        // oporer tuku global 
+
         function renderItems(page) {
-            let start = (page - 1) * itemsPerPage;
-            let end = start + itemsPerPage;
+            let start = (page - 1) * itemsPerPage; // 2 hole  1* 5 = 5
+            let end = start + itemsPerPage; //  5 + 5 = 10
             let content = document.getElementById("content");
             content.innerHTML = "";
 
