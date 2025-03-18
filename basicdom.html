@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Dom</title>
+</head>
+<body>
+    
+
+<div id="container"></div>
+<div id="container1"></div>
+<script>
+    const container = document.getElementById("container");
+    const newDiv = document.createElement("div");
+
+    newDiv.innerText = "Hello this is new div";
+    container.appendChild(newDiv);
+
+//    innerText. innerHtml, textContent example 
+
+const container1 = document.getElementById("container1");
+ const div1 = document.createElement("div");
+ div1.innerText = "This is innerText";
+ container1.appendChild(div1)
+
+//  innerHTML
+ const div2 = document.createElement("div");
+ div2.innerHTML = "<b> This is innerHtml </b>";
+ container1.appendChild(div2);
+
+//  TextContent. 
+const div3 = document.createElement ("div");
+div3.textContent = "This is textContent";
+container1.appendChild(div3);
+
+
+
+
+
+</script>
+</body>
+</html>

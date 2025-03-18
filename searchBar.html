@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Bar with Suggestions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .search-container {
+            width: 300px;
+            position: relative;
+        }
+        #search {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .suggestions {
+            position: absolute;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-top: none;
+            background: white;
+            display: none;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .suggestions div {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .suggestions div:hover {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Search items...">
+        <div class="suggestions" id="suggestions"></div>
+    </div>
+
+    <script>
+        const items = [
+            "Apple", "Banana", "Orange", "Grapes", "Pineapple", "Mango", "Strawberry", "Blueberry", "Watermelon", "Peach", 
+            "Plum", "Kiwi", "Cherry", "Pear", "Papaya", "Guava", "Coconut", "Lemon", "Lime", "Pomegranate"
+        ];
+
+        const searchInput = document.getElementById("search");
+        const suggestionsContainer = document.getElementById("suggestions");
+
+        searchInput.addEventListener("input", function () {
+            const query = this.value.toLowerCase();
+            suggestionsContainer.innerHTML = "";
+            
+            if (query) {
+                const filteredItems = items.filter(item => item.toLowerCase().includes(query));
+                
+                if (filteredItems.length) {
+                    suggestionsContainer.style.display = "block";
+                    filteredItems.forEach(item => {
+                        const div = document.createElement("div");
+                        div.textContent = item;
+                        div.addEventListener("click", () => {
+                            searchInput.value = item;
+                            suggestionsContainer.style.display = "none";
+                        });
+                        suggestionsContainer.appendChild(div);
+                    });
+                } else {
+                    suggestionsContainer.style.display = "none";
+                }
+            } else {
+                suggestionsContainer.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

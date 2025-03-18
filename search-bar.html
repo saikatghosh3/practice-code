@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Search Bar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 800px;
+        }
+        
+        .search-container {
+            position: relative;
+            width: 100%;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 50px;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .search-container:focus-within {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .search-form {
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 16px 24px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            border-radius: 50px 0 0 50px;
+            background: transparent;
+        }
+        
+        .search-button {
+            background-color: #4a6cf7;
+            border: none;
+            border-radius: 0 50px 50px 0;
+            padding: 16px 24px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .search-button:hover {
+            background-color: #3a5ce5;
+        }
+        
+        .search-icon {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+        
+        .results-container {
+            margin-top: 24px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            display: none;
+        }
+        
+        .results-container.active {
+            display: block;
+        }
+        
+        .result-item {
+            padding: 16px;
+            border-bottom: 1px solid #eef0f7;
+            transition: background-color 0.2s;
+        }
+        
+        .result-item:last-child {
+            border-bottom: none;
+        }
+        
+        .result-item:hover {
+            background-color: #f8f9fc;
+        }
+        
+        .result-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .result-description {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .empty-results {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+        }
+        
+        @media (max-width: 576px) {
+            .search-input {
+                padding: 14px 20px;
+                font-size: 14px;
+            }
+            
+            .search-button {
+                padding: 14px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="search-container">
+            <form class="search-form" id="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search for anything..." autocomplete="off">
+                <button type="submit" class="search-button">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+        
+        <div class="results-container" id="results-container">
+            <!-- Search results will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        // Sample data for search demonstration
+        const sampleData = [
+            {
+                id: 1,
+                title: "Professional Web Design",
+                description: "Learn the fundamentals of creating professional and responsive web designs with modern tools and techniques."
+            },
+            {
+                id: 2,
+                title: "JavaScript Fundamentals",
+                description: "Master the core concepts of JavaScript programming language including variables, functions, and objects."
+            },
+            {
+                id: 3,
+                title: "CSS Best Practices",
+                description: "Discover the best practices for writing maintainable and scalable CSS for your web projects."
+            },
+            {
+                id: 4,
+                title: "Responsive Web Development",
+                description: "Build websites that look great on all devices with responsive design principles and mobile-first approach."
+            },
+            {
+                id: 5,
+                title: "Modern Frontend Frameworks",
+                description: "Explore popular frontend frameworks like React, Vue, and Angular for building dynamic web applications."
+            },
+            {
+                id: 6,
+                title: "UI/UX Design Principles",
+                description: "Learn how to create intuitive user interfaces and enhance user experience with proven design principles."
+            }
+        ];
+
+        // DOM elements
+        const searchForm = document.getElementById('search-form');
+        const searchInput = document.getElementById('search-input');
+        const resultsContainer = document.getElementById('results-container');
+
+        // Event listener for form submission
+        searchForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            performSearch();
+        });
+
+        // Event listener for input changes (real-time search)
+        searchInput.addEventListener('input', function() {
+            if (searchInput.value.length >= 2) {
+                performSearch();
+            } else if (searchInput.value.length === 0) {
+                clearResults();
+            }
+        });
+
+        // Function to perform search
+        function performSearch() {
+            const query = searchInput.value.toLowerCase().trim();
+            
+            if (query === '') {
+                clearResults();
+                return;
+            }
+            
+            const results = sampleData.filter(item => 
+                item.title.toLowerCase().includes(query) || 
+                item.description.toLowerCase().includes(query)
+            );
+            
+            displayResults(results, query);
+        }
+
+        // Function to display search results
+        function displayResults(results, query) {
+            resultsContainer.innerHTML = '';
+            resultsContainer.classList.add('active');
+            
+            if (results.length === 0) {
+                resultsContainer.innerHTML = `
+                    <div class="empty-results">
+                        <p>No results found for "${query}"</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            results.forEach(result => {
+                const resultItem = document.createElement('div');
+                resultItem.classList.add('result-item');
+                
+                // Highlight the matching text
+                const highlightedTitle = highlightText(result.title, query);
+                const highlightedDescription = highlightText(result.description, query);
+                
+                resultItem.innerHTML = `
+                    <div class="result-title">${highlightedTitle}</div>
+                    <div class="result-description">${highlightedDescription}</div>
+                `;
+                
+                resultsContainer.appendChild(resultItem);
+                
+                // Add click event to each result
+                resultItem.addEventListener('click', function() {
+                    searchInput.value = result.title;
+                    clearResults();
+                    // You can add additional action here, like navigation
+                    alert(`You selected: ${result.title}`);
+                });
+            });
+        }
+
+        // Function to highlight matching text
+        function highlightText(text, query) {
+            if (!query) return text;
+            
+            const regex = new RegExp(`(${query})`, 'gi');
+            return text.replace(regex, '<mark>$1</mark>');
+        }
+
+        // Function to clear results
+        function clearResults() {
+            resultsContainer.innerHTML = '';
+            resultsContainer.classList.remove('active');
+        }
+
+        // Close results when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!searchForm.contains(event.target) && !resultsContainer.contains(event.target)) {
+                clearResults();
+            }
+        });
+    </script>
+</body>
+</html>
