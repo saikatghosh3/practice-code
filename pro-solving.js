@@ -75,3 +75,33 @@ function insertion(arr1, arr2){
    return arr1.filter(num=>arr2.includes(num) )
 }
 console.log(insertion([1,2,3,4],[2,3,5,4]));
+
+// remove the duplicate from the array
+
+function removeDuplicate (arr){
+    return [...new Set(arr)];
+}
+console.log(removeDuplicate([1,2,22,3,3,34,5,667,78,8,8 ]));
+
+// Write a function that flattens a deeply nested array into a single array.
+
+function flatternArray (arr){
+    return  arr.flat(Infinity);
+
+
+}
+
+console.log(flatternArray([1, [2, [3, [4, 5]]], 6]));
+
+//Chunk an array into smaller array
+
+function ChunkArray(arr, size){
+    let result = [];
+    for(let i = 0 ; i< arr.length; i+= size){
+        result.push(arr.slice(i, i + size))
+    }
+
+    return result;
+}
+
+console.log(ChunkArray([1,2,3,4,5,6,7,8,9], 3));
