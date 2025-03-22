@@ -105,3 +105,65 @@ function ChunkArray(arr, size){
 }
 
 console.log(ChunkArray([1,2,3,4,5,6,7,8,9], 3));
+
+// check if a stirng is a palindrome 
+function isPalindrome (str){
+    let reversed = str.split("").reverse().join("");
+    return str === reversed;
+}
+console.log(isPalindrome("racecar"));
+console.log(isPalindrome("hello"));
+
+// Find the even numbers in array. 
+
+function findEvenNumbers (arr){
+    return arr.filter(num => num % 2 === 0)
+}
+console.log(findEvenNumbers([1,2,2,3,4,5,6,6,7]));
+
+// Find the sum of Even numbers in an array
+
+function sumEvenNumber (arr){
+    return arr.reduce((sum, num)=> num % 2 === 0 ? sum + num : sum, 0);
+}
+console.log(sumEvenNumber([1,2,3,4,5,6,7,8,8]));
+
+
+// if Else related problem
+
+// check the number is even or odd?
+
+function checkEvenOdd (num){
+    return num % 2 === 0 ? "Even" : "Odd";
+}
+ console.log(checkEvenOdd(7));
+ console.log(checkEvenOdd(10));
+
+
+ // Find the Greater of Two Numbers
+  function findGreater (a, b){
+    return a > b ? a: b;
+  }
+  console.log(10,30);
+
+//   check if a person is Eligble to Vote 
+function CheckEligible( age){
+    return age >= 18 ? "Eligible to vote" : "not eligible";
+}
+console.log(CheckEligible(20));
+console.log(CheckEligible(17));
+
+
+// practice
+
+// which one will execute first ? 
+console.log("first");
+
+new Promise((resolve) => {
+    setTimeout(() => {
+        console.log("two");
+        resolve("Promise is resolved");
+    }, 3000);
+}).then((message) => console.log(message));
+
+console.log("three");
