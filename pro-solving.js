@@ -167,3 +167,23 @@ new Promise((resolve) => {
 }).then((message) => console.log(message));
 
 console.log("three");
+
+// first three two. 
+
+// check whether is the number is positive negetive or zero
+
+function checkNumber (num){
+    return num > 0 ? "positive" : num < 0 ? "Negative" : "zero";
+
+}
+console.log(checkNumber(5));
+console.log(checkNumber(-1));
+console.log(checkNumber(0));
+
+// check the number is leap year or not 
+function isLeapYear(year){
+    return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0 ) ? "Leap year" : "Not leap year";
+}
+console.log(isLeapYear(2024));
+console.log(isLeapYear(2000));
+console.log(isLeapYear(1998));
