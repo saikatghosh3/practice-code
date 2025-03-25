@@ -187,3 +187,21 @@ function isLeapYear(year){
 console.log(isLeapYear(2024));
 console.log(isLeapYear(2000));
 console.log(isLeapYear(1998));
+
+// template literal 
+
+//  for personal information 
+
+function intorduction (name, age){
+    return `my name is ${name} and i am ${age} `;
+}
+console.log(intorduction("Saikat", 26));
+
+// create a dynamic greeting Based on Time
+
+function greeting(name){
+    let hour = new Date().getHours();
+    let timeofDay = hour < 12 ? "morning" : hour < 18 ? "afternoon" : "evening"
+     return     `Good ${timeofDay} , ${name}! Hope you're having a great day!`;
+
+}
