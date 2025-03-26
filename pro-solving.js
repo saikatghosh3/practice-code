@@ -205,3 +205,69 @@ function greeting(name){
      return     `Good ${timeofDay} , ${name}! Hope you're having a great day!`;
 
 }
+// problems based on currying
+
+// currying a functional programming technique where a function is transformed into 
+// a sequence of function , each taking a single argument. Instead of taking all arguments
+// at once it takes them one at a time and returns  a new function for the next argument
+// untill all arguments are provided. 
+
+// function without currying 
+
+function add (a, b , c){
+  return a + b + c;
+
+}
+
+console.log(add(12,44,66));
+
+
+// function with currying 
+
+function add(a){
+    return function(b){
+        return function (c){
+            return a + b + c
+        }
+    }
+}
+console.log(add(11,33,545));
+
+
+// write a curried function that filters an array of numbers base on a condition 
+
+const filterNumbers = condition => numbers => numbers.filter(condition);
+
+const isEven = num => num % 2 === 0;
+const isGreaterThan10 = num => num > 10;
+
+const filterEven = filterNumbers(isEven);
+const filterGreaterThan10 = filterNumbers(isGreaterThan10);
+
+console.log(filterEven([1, 2, 3, 4, 5, 6])); 
+// Output: [2, 4, 6]
+
+console.log(filterGreaterThan10([5, 10, 15, 20])); 
+// Output: [15, 20]
+
+
+// without currying  the code will look like this 
+
+function filterNumbers(numbers, condition) {
+    return numbers.filter(condition);
+}
+
+function isEven(num) {
+    return num % 2 === 0;
+}
+
+function isGreaterThan10(num) {
+    return num > 10;
+}
+
+console.log(filterNumbers([1, 2, 3, 4, 5, 6], isEven)); 
+// Output: [2, 4, 6]
+
+console.log(filterNumbers([5, 10, 15, 20], isGreaterThan10)); 
+// Output: [15, 20]
+
