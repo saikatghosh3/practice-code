@@ -253,21 +253,150 @@ console.log(filterGreaterThan10([5, 10, 15, 20]));
 
 // without currying  the code will look like this 
 
-function filterNumbers(numbers, condition) {
-    return numbers.filter(condition);
-}
+// function filterNumbers(numbers, condition) {
+//     return numbers.filter(condition);
+// }
 
-function isEven(num) {
-    return num % 2 === 0;
-}
+// function isEven(num) {
+//     return num % 2 === 0;
+// }
 
-function isGreaterThan10(num) {
-    return num > 10;
-}
+// function isGreaterThan10(num) {
+//     return num > 10;
+// }
 
-console.log(filterNumbers([1, 2, 3, 4, 5, 6,], isEven)); 
+// console.log(filterNumbers([1, 2, 3, 4, 5, 6,], isEven)); 
 // Output: [2, 4, 6]
 
-console.log(filterNumbers([5, 10, 15, 20], isGreaterThan10)); 
+// console.log(filterNumbers([5, 10, 15, 20], isGreaterThan10)); 
 // Output: [15, 20]
+
+
+
+// write a function that generates an email confirmation message using template literals
+
+function generatesEmail (name, orderId, amount){
+
+    return ` 
+    Hi ${name},
+    Thank you for your order! your order Id is ${orderId}
+    The total amount charged is ${amount.toFixed(2)}
+     
+    If you have any questions, feel free to reply to this email.
+
+    Best regards, 
+    your company team
+    
+    
+    `;
+}
+
+console.log(generatesEmail("Saikat", "A123454", 299.99));
+
+
+// api related  problems             
+
+// fetch Github user Data
+
+async function getGitHubUser(username) {
+    let response = await fetch(`https://api.github.com/users/${username}`);
+    let data = await response.json();
+
+    console.log(`Github user: ${data.login}, Followers: ${data.followers}`);
+}
+
+getGitHubUser("saikatghosh3");
+
+// get request (fetch Data from Api)
+
+async function getPosts() {
+    let response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    let data  = await response.json();
+    console.log(data.slice(0, 3)); 
+    
+}
+getPosts();
+
+
+// post  request (send data to api)
+async function createPost() {
+    let response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            title: "My New Post",
+            body: "This is my first post.",
+            userId: 1
+        })
+    });
+
+    let data = await response.json();
+    console.log("Post Created:", data);
+}
+
+createPost();
+
+
+// put request 
+
+async function updatePost (postId) {
+    let response = await fetch (`https://jsonplaceholder.typicode.com/posts/${postId}`, {
+    
+        method: "PUT", 
+        headers: {
+            "content-Type" : "application/json"
+        },
+        body: JSON.stringify({
+            title: "updated Title", 
+            body: "updated content", 
+            userId: 1
+        })
+
+
+    });
+
+
+    let data = await response.json();
+    console.log("post Updated:", data);
+}
+updatePost(1);
+
+
+// delete request (remove data)
+async function  deletePost(postId) {
+    let response = await fetch (`https://jsonplaceholder.typicode.com/posts/${postId}`, {
+        method : DELETE
+    });
+
+    if (response.ok){
+        console.log(`Post ${postId} deleted successfully.`);
+    }
+}
+
+deletePost(1);
+
+// GraphQL is an alternative to REST APIs that allows fetching only the required data.
+
+
+// Destructuring problems and solutions 
+
+// write a javascript function to swap two variables using destructuring .
+
+function swapValue(a,b){
+    [a,b] = [b, a];
+    return [a,b];
+}
+
+console.log(swapValue(12,5));
+
+
+// Extract specific value form an object 
+
+const person = { name: "Alice", age: 25, city: "New York" };
+
+const { city, age } = person;
+
+console.log(city, age); // Output: Alice 25
 
