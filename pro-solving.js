@@ -265,7 +265,7 @@ function isGreaterThan10(num) {
     return num > 10;
 }
 
-console.log(filterNumbers([1, 2, 3, 4, 5, 6], isEven)); 
+console.log(filterNumbers([1, 2, 3, 4, 5, 6,], isEven)); 
 // Output: [2, 4, 6]
 
 console.log(filterNumbers([5, 10, 15, 20], isGreaterThan10)); 
