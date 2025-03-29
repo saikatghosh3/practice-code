@@ -400,3 +400,71 @@ const { city, age } = person;
 
 console.log(city, age); // Output: Alice 25
 
+// Extract two elements form the array.
+
+const numbers = [10, 39 ,59 ,57 , 899];
+const [first, second, ...rest] = numbers;
+console.log(first, second);
+
+// Nested object destructuring 
+const user = {
+    id: 101, 
+    details : {
+        name: "Emaa", 
+        age : 28,
+        lastName: "watson",
+        address: {
+            city: "london",
+            country:"uk"
+        }
+    }
+};
+
+
+
+// destructuring nested properties
+
+const {details: { lastName, address: {country}}}= user;
+console.log(lastName, country);
+
+
+// swap object properties usnign destructuring
+
+let user1 = {name: "Alice", role: "destigner"};
+[user.name, user.role] = [user.role, user.name];
+console.log(user);
+
+
+// write a function that returns multiple values as an array, and use 
+// destructuring to assign them 
+
+function getMinMax (numbers){
+    let min = Math.min(...numbers);
+
+    let max = Math.max(...numbers);
+    return [min, max];
+}
+
+const [min, max ] = getMinMax([1,2,3,4,5,6,7,8]);
+console.log(`Min: ${min}, Max  ${max}`);
+
+
+
+// Imagine an API response returning user data.
+//  Extract only the name, email, and city using destructuring.
+
+
+const apiResponse = {
+    userId : 101, 
+    name2: "Jhon Doe",
+    email: "JhonDoe@example.com",
+    address2: {
+        city2: "new York",
+        Country2: "USA"
+    },
+    phone: "123435555"
+};
+
+const {name2, email, address2 :{city2}}= apiResponse;
+
+console.log(name2, email, city2);
