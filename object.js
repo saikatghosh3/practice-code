@@ -32,7 +32,7 @@ person1.city = "Dhaka"; // add new property
 function Person (name, age){
     this.name = name;
     this.age = age;
-    this.greet(){
+    this.greet() {
         return `Hello my name is ${this.name}`;
     }
 }
@@ -126,3 +126,32 @@ parrot.showInfo();
 // Without extends, you'd have to write this.name = name; inside Bird again.
 
 // But since Animal already does this, super(name) reuses that code.
+
+
+// constructor:
+
+// A construror is a special method in a class or
+//  function that rund automatically when 
+// you create a new Object. It initializes properties and sets 
+// up the object with default  values 
+
+
+class Person {
+    constructor(name, age) { 
+      this.name = name;  // Assigns 'name' to the object
+      this.age = age;    // Assigns 'age' to the object
+    }
+  
+    introduce() {
+      console.log(`Hi, my name is ${this.name} and I am ${this.age} years old.`);
+    }
+  }
+  
+  let person3 = new Person("Saikat", 25);
+  let person2 = new Person("Rahul", 30);
+  
+  console.log(person3.name); // Output: Saikat
+  console.log(person2.age);  // Output: 30
+  
+  person1.introduce(); // Output: Hi, my name is Saikat and I am 25 years old.
+  
