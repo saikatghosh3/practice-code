@@ -468,3 +468,73 @@ const apiResponse = {
 const {name2, email, address2 :{city2}}= apiResponse;
 
 console.log(name2, email, city2);
+
+
+
+//   api problem 
+// Problem 1: Fetch Data from an API and Extract Required Fields
+// async function fetchData () {
+//     try{
+//     const response = await fetch("https://jsonplaceholder.typicode.com/users/1");
+
+//     const {name, email, address:{city}} = await response.json();
+
+//     console.log(`User name is ${name}, His/Her email is ${email} and city is ${city}`);
+// }catch(error){
+//     console.log(`Error! cant fetch data`);
+// }
+// }
+// fetchData();
+
+
+//  Fetch Multiple Users and Extract Data in a Loop
+
+async function fetchUsers() {
+    try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/users");
+        const users = await response.json();
+
+        for (const { id, name } of users) {
+            console.log(`ID: ${id}, Name: ${name}`);
+        }
+    } catch (error) {
+        console.error("Error fetching users:", error);
+    }
+}
+
+fetchUsers();
+
+
+// Renaming API Response Keys While Destructuring
+
+ async function fetchApi(){
+    try{
+      const response = await fetch("");
+      const {title: heading, body: content} = await response.json();
+
+
+      console.log(`Heading : ${heading}`)
+      console.log(`content  : ${content}`)
+    }
+    catch(error){
+        console.error("Error fetching post:", error);
+    }
+}
+
+// merge two api responses using destructuring 
+// fetch user data and their posts from two APi endpoints and merge them
+
+async function fetchUserAndPosts(params) {
+    try{
+        const  userResponse = await fetch("https://jsonplaceholder.typicode.com/users/1");
+        const {name, email} = await userResponse.json();
+
+        const postResponse = await fetch("https://jsonplaceholder.typicode.com/posts?userId=1")
+        const [{title, body} ]  = await postResponse.json();
+
+        console.log(`User: ${name} ${email}`);
+        console.log(`Latest Post: ${title}- ${body}`);
+    }catch(error){
+        console.error("Error fetching data:", error)
+    }
+}
