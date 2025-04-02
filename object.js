@@ -158,4 +158,97 @@ class Person {
 
 
 
+// now problems with solutions 
+// Create a Person class with name, age, and gender properties.
+//  Add a method introduce() that prints a person's details.
 
+class Person5 {
+    constructor(name, age, gender) {
+        this.name= name;
+        this.age= age;
+        this.gender= gender;
+    }
+    introduce(){
+        console.log(`Hi I'm ${this.name},a ${this.age}-year old ${this.gender}`);
+    }
+}
+
+ const person6 = new Person("Saikat", 27, "Male");
+person6.introduce();
+
+// Extend the Person class to create an Employee class that adds
+//  a jobTitle and salary. Override introduce().
+
+class Employee extends Person5{
+    constructor(name, age, gender, JobTitle, salary){
+        super(name, age, gender);
+        this.JobTitle = JobTitle;
+        this.salary = salary;
+    }
+    introduce(){
+        console.log(`Hi, I'm ${this.name}, a ${this.age}-year-old${this.gender}, working as a ${this.JobTitle} with a salary of ${this.salary}`);
+
+    }
+}
+
+
+const emp1 = new Employee ("Alice", 30, "Female", "software Engineer", 70000);
+emp1.introduce();
+
+// Create a class BankAccount with a private balance and methods to deposit(), withdraw(),
+//  and get balance safely.
+
+class BankAccount {
+    #balance; 
+    constructor(owner, intialBalance){
+        this.owner = owner;
+        this.#balance = intialBalance;
+    }
+    deposit(amount) {
+        if (amount > 0) this.#balance += amount;
+        else console.log("Deposit amount must be positive.");
+    }
+
+
+   withdraw (amount){
+    if (amount > 0 && amount <= this.#balance) this.#balance -=amount;
+    else console.log("Insuficient balance or invalid amount");
+   }
+
+   get balance (){
+    return this.#balance;
+   }
+
+}
+
+const account = new BankAccount("john", 500);
+account.deposit(499);
+account.withdraw(100);
+console.log(`${account.owner}'s balance: $${account.balance}`);
+
+
+// jodi kokhono kono method class er baire   new class make na 
+// kore bebohar korte Chai tahole static class make kora jai
+// er vitore this kaj kore na.
+
+// 1. What is a Static Method?
+// Defined using the static keyword in a class.
+
+// Cannot be accessed by instances of the class.
+
+// Can be accessed only through the class name.
+
+class Mathhelper {
+    static add(a, b){
+        return a+b;
+    }
+   static multiply (a,b){
+    return a* b;
+   }
+
+}
+console.log(Mathhelper.add(4,5));
+console.log(Mathhelper.multiply(4,5));
+
+
+// onno object er moto na. static
