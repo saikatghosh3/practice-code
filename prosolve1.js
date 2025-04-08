@@ -1,13 +1,24 @@
-// Reverse a string 
+// Reverse a string ([split("") and join("")]) spce na dekhei character wise vag kore
 
 // function reverseString(str){
-//     return  str.split(""). reverse().join("")
+//     return  str.split("").reverse().join("")
 // }
 
 // console.log(reverseString("i am boy"));
+// ([split("") and join("")]) space na dekhei character wise vag kore
+
+// Reverse Words in a Sentence
+//  same code jodi space thake tahole word anusare vag kore.
+
+// function reverseString(str){
+//     return  str.split(" ").reverse().join(" ");
+// }
+
+// console.log(reverseString("Hello how are you"));
 
 
-// remove dublicate 
+
+// remove dublicate  and find unique number same
 
 
 function removeDuplicate(arr){
@@ -106,8 +117,25 @@ function ArrayToObject(arr) {
   
   // Output: { name: 'john', age: 25 }
 
-function name(){
 
+// merge the two array
+
+function mergeArray (arr1, arr2){
+    return[...arr1,...arr2].sort((a,b)=> a -b );
 }
 
+console.log(mergeSortedArrays([1, 3, 5], [2, 4, 6]));
 
+// -> spread operator is merging. and sort is placing ascending order 
+
+// Count the Occurrences of Each Element in an Array
+
+function CountOccurrences(arr){
+    return arr.reduce((acc, num)=> {
+        acc[num] = (acc[num] || 0) +1;
+        return acc;
+
+    }, {})
+}
+
+console.log(CountOccurrences([1,2,2,3,3,3,4,5]));

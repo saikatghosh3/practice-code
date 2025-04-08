@@ -78,6 +78,9 @@ console.log(insertion([1,2,3,4],[2,3,5,4]));
 
 // remove the duplicate from the array
 
+
+const arr4= [{name: "saikat"}, {age: 45},{ school: "ssss"}];
+
 function removeDuplicate (arr){
     return [...new Set(arr)];
 }
@@ -538,3 +541,7 @@ async function fetchUserAndPosts(params) {
         console.error("Error fetching data:", error)
     }
 }
+
+
+
+  const doubled2 = numbers.map();

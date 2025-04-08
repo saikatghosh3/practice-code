@@ -1,18 +1,18 @@
 // object for practice 
-// An object is a collection of key-value pairs,
-//  where the keys are called properties (or attributes),
-//   and the values can be any data type,
-//    including functions (called methods when inside an object).
+An object is a collection of key-value pairs,
+ where the keys are called properties (or attributes),
+  and the values can be any data type,
+   including functions (called methods when inside an object).
 
-// syntax 
-// let person1 = {
-//     name: "saikat",
-//     age: 27, 
-//     isStudent: false, 
-//     greet: function (){
-//         console.log( "Hello my name is" + this.name);
-//     }
-// };
+syntax 
+let person1 = {
+    name: "saikat",
+    age: 27, 
+    isStudent: false, 
+    greet: function (){
+        console.log( "Hello my name is" + this.name);
+    }
+};
 
 // console.log(person1.name);
 // person1.greet();
@@ -32,7 +32,7 @@ person1.city = "Dhaka"; // add new property
 function Person (name, age){
     this.name = name;
     this.age = age;
-    this.greet() {
+  this.greet() {
         return `Hello my name is ${this.name}`;
     }
 }
@@ -252,3 +252,57 @@ console.log(Mathhelper.multiply(4,5));
 
 
 // onno object er moto na. static
+
+
+
+// simple example of object .  
+
+const Man =  {
+    firstName: "jhon",
+    lastName: "Doe", 
+    id : 55666, 
+    fullName: function(){
+        return this.firstName + "" + this.lastName;
+    }
+
+};
+
+document.getElementById("demo").innerHTML = Man.fullName();
+
+// Object.entries() make it easier to loop over object 
+
+const furits = {
+    Banana: 300, 
+    Orange: 400,
+    Mango: 500 
+};
+
+let text = "";
+for (let [fruit, amount] of Object.entries(furits)) {
+    text += fruit + ": " + amount + " <br>";
+}
+
+console.log(text);
+
+
+
+
+function myFunction() {
+    let carName = "Volvo";
+    let text = "Inside: " + typeof carName + " " + carName; 
+  
+  }
+  
+  myFunction();
+
+
+  const person = {
+    name: "jhon", 
+    age: 30, 
+    city: "new york"
+  };
+
+  const myArray = Object.values(person);
+  console.log(myArray);
+
+//   Object.values() creates an array from the property values
