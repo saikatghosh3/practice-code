@@ -67,3 +67,71 @@ function sumArray (arr){
 }
 
 console.log(sumArray[4,5,6,7,8,9]);
+
+
+
+// Try Catch thorw block 
+
+// The try...catch  statement is used to handle errors in your code . Instead of your entire Program 
+// crahing when an error happens , you can catch the error and decide what to do next 
+
+try {
+    let result = 10/0;
+    console.log(result);
+    let name = undefined;
+    console.log(name.length);
+} catch(error){
+    console.log("An error occured:", error.message);
+}
+
+// fetching api (async/await + try / catch)
+async function fetchUserData(){
+    try{
+        const response = await fetch("https://api.example.com/users");
+        if(!response.ok){
+            throw new Error("Failed to fetch data")
+        }
+        const data = await response.json();
+    }catch(error){
+        console.log("Error fetching data", error.message);
+    }
+}
+
+fetchUserData();
+
+
+// User authentication system 
+
+function login(user){
+    try{
+        if(!user.username || !user.password){
+            throw new Error("Username and password are required")
+        }
+        if(user.username !== "admin" || user.password !== "12334"){
+            throw new Error ("invalid credintials");
+        }
+        console.log("Login successful!");
+    }catch (error){
+        console.log("Login error:", error.message);
+    }
+}
+login({username: "admin", password: ""});
+
+
+// file upload check limit 
+
+function upload(file){
+    try{
+        if(!file) throw new Error("No file selected");
+        if(file.size > 5 * 1024* 1024) throw new Error("File is too large");
+        if(!["image/jgeg", "image/png"].includes(file.type)){
+            throw new Error ("only JPG and PNG are allowed")
+        }
+        console.log("File ready to upload: ", file.name)
+    }catch(error){
+        console.log("Upload error: ", error.message);
+    }
+   
+}
+
+uploadFile({ name: "image.png", size: 6000000, type: "image/png" });
