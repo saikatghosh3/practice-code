@@ -139,3 +139,44 @@ function CountOccurrences(arr){
 }
 
 console.log(CountOccurrences([1,2,2,3,3,3,4,5]));
+
+// date realted problems and practice 
+
+// Write a function that returns today’s date in the YYYY-MM-DD format.
+
+function getTodayDate(){
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() +1).padStart(2,'0');
+    const day = String(today.getDate()).padStart(2, '0');
+
+    return `${year}- ${month}- ${day}`;
+}
+
+console.log(getTodayDate());
+
+// Write a function that takes a date string (YYYY-MM-DD) and returns true if it’s a Saturday or Sunday.
+
+function  isWeekend(dateStr) {
+    const date = new Date(dateStr);
+    const day = date.getDay();
+    return day === 0 || day == 6;
+    
+}
+console.log(isWeekend("2025-04-12"));
+console.log(isWeekend("2025-04-13"));
+console.log(isWeekend("2025-04-15"));
+
+// Create a function that calculates a person's age based on their birth date.
+  function calculateAge(dob){
+    const birthDate = new Date(dob);
+    const today = new Date();
+  
+    let age = today.getFullYear() -birthDate.getFullYear();
+    const m  = today.getMonth() -birthDate.getMonth();
+    if (m< 0 || (m ===0 && today.getDate() < birthDate.getDate())){
+        age--;
+    }
+    return age;
+}
+console.log(calculateAge("2000-08-15"));
