@@ -180,3 +180,23 @@ console.log(isWeekend("2025-04-15"));
     return age;
 }
 console.log(calculateAge("2000-08-15"));
+
+
+// practical example 
+// count down Timer 
+ function countdown(endDateSrt){
+    const endDate = new Date (endDateSrt);
+    const now = new Date();
+    const diff = endDate - now;
+
+    if (diff<= 0) return "Event ended";
+    const days = Math.floor(diff/  (1000*60 *60 *24 ));
+    const hours = Math.floor((diff/  (1000*60 *60)) % 24);
+    const minutes = Math .floor((diff / (1000 *60)));
+    const seconds = Math.floor((diff/ 1000) %60);
+
+    return `${days}d${hours}h${minutes}m ${seconds}s left`;
+ 
+ }
+
+ console.log(countdown("2025-04-16T23:59:59"));
