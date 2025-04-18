@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borderbox and content box </title>
+<style>
+.box{
+    height: 100px;
+    padding: 20px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+    background-color: lightblue;
+    color: black;
+}
+
+.content-box{
+    width: 200px;
+    box-sizing: content-box;
+}
+.border-box{
+    width: 200px;
+    box-sizing: border-box;
+}
+
+</style>
+
+</head>
+<body>
+    <div class="box content-box"></div>
+    <div class="box border-box"></div>
+   
+
+    <!-- Explain:  
+    content-box is visibly wider than .border-box even though both have same width
+    content-box is just for the content, not including padding/border 
+    IN the border-box 200px is everything together(content+ padding+ border) -->
+
+
+
+
+</body>
+</html>
