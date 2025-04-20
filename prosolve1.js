@@ -200,3 +200,35 @@ console.log(calculateAge("2000-08-15"));
  }
 
  console.log(countdown("2025-04-16T23:59:59"));
+
+
+
+ // math practic
+ let variable1 = 33.33;
+ console.log(Math.ceil(variable1));
+ console.log(Math.floor(variable1));
+ console.log(Math.random(variable1));
+ console.log(Math.round(variable1));
+
+
+// Math.floor
+// rounds a number down to the nearest SVGAnimatedInteger, no matter how small the decimal is 
+// it always retuns the largest interger less than or equal to the given Number. 
+
+// getting the full minutes from seconds 
+let seconds = 125;
+let minutes = Math.floor(seconds/60);
+console.log(minutes);
+
+// pagination with zero-based index;
+let itemIndex = 37;
+let itemPerpage = 10;
+let page = Math.floor(itemIndex/ itemPerpage);
+
+
+//   currency or price triming
+
+  let price = 19.99;
+  let displayPrice = Math.floor(price);
+
+
