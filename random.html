@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Position Demo</title>
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      height: 2000px; /* so we can scroll and see fixed/sticky */
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      position: relative;
+      height: 300px;
+      background: #f0f0f0;
+      border: 2px dotted gray;
+      margin-bottom: 300px;
+     
+      padding: 20px;
+
+    }
+
+    .box {
+      width: 120px;
+      height: 100px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .static {
+      position: static;
+      background: steelblue;
+    }
+
+    .relative {
+      position: static;
+      top: 20px;
+      left: 20px;
+      background: seagreen;
+    
+    }
+
+    .absolute {
+      width: 30%;
+      height: 60%;
+      position: absolute;
+      top: 20px;
+      left: 160px;
+      background: tomato;
+    }
+
+    .fixed {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: gold;
+      z-index: 999;
+    }
+
+    .sticky-container {
+      height: 600px;
+      background: #eef;
+      padding-top: 80px;
+    }
+
+    .sticky {
+      position: sticky;
+      top: 0;
+      background: purple;
+    }
+
+    .div2{
+      margin-top: 50px;
+      width: 70vw;
+      height: 50vh;
+      background-color: lightpink;
+
+    }
+  </style>
+</head>
+<body>
+
+  <h2>CSS Position Property Demo</h2>
+
+  <div class="container">
+    <div class="box static">Static</div>
+    <div class="box relative">Relative</div>
+    <div class="box absolute">Absolute</div>
+  </div>
+
+  <div class="box fixed">Fixed</div>
+
+  <div class="sticky-container">
+    <div class="box sticky">Sticky</div>
+    <p>Scroll down and watch the purple "Sticky" box stick to the top!</p>
+  </div>
+
+  <div class="div2"></div>
+
+</body>
+</html>
