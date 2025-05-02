@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before after</title>
+
+    <style>
+     .text-box {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: lightgray;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Nothing is shown by default */
+.text-box::after {
+  content: "";
+  transition: all 0.3s ease;
+}
+
+/* This class is added by JS to show the arrow */
+.text-box.add-arrow::after {
+  content: " →"; /* Notice the space before the arrow */
+  color: red;
+  font-weight: bold;
+}
+
+
+    </style>
+</head>
+<body>
+    <button id="toggleBtn">Add Arrow</button>
+<div class="text-box">Read More</div>
+
+
+
+    <script>
+const btn = document.getElementById("toggleBtn");
+const textBox = document.querySelector(".text-box");
+
+btn.addEventListener("click", () => {
+  textBox.classList.toggle("add-arrow");
+
+  // Optional: Update button text
+  btn.textContent = textBox.classList.contains("add-arrow")
+    ? "Remove Arrow"
+    : "Add Arrow";
+});
+
+
+    </script>
+</body>
+</html>

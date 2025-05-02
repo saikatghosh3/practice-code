@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html and css practice</title>
+<style>
+ /* :root{
+    --main-color:red;
+    --font-size: 2rem;
+    --border-radius: 10px;
+ }
+    
+    .exercise1{
+        height: 200px;
+        width: 300px;
+        border: 1px solid green;
+        border-radius: var(--border-radius);
+        background-color: var(--main-color);
+    } */
+      
+    /* .parent{
+        height: 400px;
+        width: 300px;
+        background-color: aqua;
+       z-index: 1;
+        
+       
+    }
+
+    .child{
+        height:200px;
+        width: 200px;
+        background-color: rgb(85, 0, 255);
+        z-index: 0;
+        
+        
+      
+    } */
+
+    /* z-index practice */
+
+    .container {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      margin: 50px;
+    }
+
+    .box1 {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 150px;
+      height: 150px;
+      background-color: red;
+      z-index: 1;
+    }
+
+    .box2 {
+      position: absolute;
+      top: 60px;
+      left: 60px;
+      width: 150px;
+      height: 150px;
+      background-color: blue;
+      z-index: 2;
+    }
+
+</style>
+ 
+</head>
+<body>
+    <!-- <div class="exercise1"> </div> -->
+     <!-- <div class="parent">
+        <div class="child">
+            <h1>This is h1</h1>
+        </div>
+     </div> -->
+
+        <!-- ***** nesetd obsti parent child theke boro hobe na z index. ******** -->
+<!-- 
+        <ul id="parentList">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+          </ul> -->
+
+
+<!-- canvas example -->
+ <!-- <canvas id="myCanvas" height="200px" width="300px" style="border:1px solid #000000; background-color: green">
+      
+    your borwser doesn't support canvas tag.
+ </canvas> -->
+
+  <!-- z-index practice  -->
+
+<!--  
+  <div class="container">
+    <div class="box1">Box 1</div>
+    <div class="box2">Box 2</div>
+  </div> -->
+
+
+
+
+<script>
+//     const parentList = document.getElementById('parentList');
+
+// parentList.addEventListener('click', function(event) {
+//   if (event.target.tagName === 'LI') {
+//     alert('You clicked on ' + event.target.innerText);
+//   }
+// });
+
+
+// canvas script 
+// const canvas = document.getElementById('myCanvas');
+//   const ctx = canvas.getContext('2d');
+
+//   ctx.beginPath();
+//   ctx.arc(150, 100, 50, 0, 2 * Math.PI); 
+//   ctx.fillStyle = "red";
+//   ctx.fill();
+// const obj = { name: "Alice" };
+// console.log(obj.__proto__);
+
+
+// removing multiple item 
+// const numbers = [1,2,3,4,5,6,7,8,9];
+// const toRemove = [2,3,4];
+// const result = numbers.filter(num=> !toRemove.includes(num));
+
+// console.log(result);
+// console.log(numbers);
+
+
+// check if an item is present or not
+
+    // const fruits = ["mango", "banana", "orange", "pineapple"];
+
+    // console.log(fruits.includes("banana"));
+    // console.log(fruits.includes("Apple"));
+
+// protype inheritance 
+
+// const person = {
+//   greet(){
+//     console.log("hello from parent");
+//   }
+// };
+// const child = Object.create(person);
+
+// child.greet();
+
+// what is clouser:
+// clouser exampel: 
+
+// function outerVar(){
+//   let myVar = "i am from outer";
+
+//   function innerFunction(){
+//     console.log(myVar);
+//   }
+//   return innerFunction;
+// }
+// const myClosure = outerVar();
+// myClosure(); 
+
+// filter: 
+
+// const numbers = [1,2,3,4,5,6,7];
+// const newnumbers = numbers.filter(num => num % 2 == 0) 
+
+  
+
+var a = 10;
+var c = a + b;
+var  b = 30;
+console.log(c);
+
+
+</script>
+
+
+ <!-- const number = [1,2,33,44];
+ numbers.filter().map(). -->
+
+ <!-- const number = ["absd"]
+  const new = number.split('') -->
+
+
+  <!-- const promise = new Promise((resolve, reject){
+  
+  
+  }); -->
+<!-- 
+  function greet (greetings){
+    return `${message} ${this.name}` 
+  }
+
+  const person = {name: "saikat"}
+  greet.apply(person, ["hello"])
+</body> -->
+
+
+
+
+</html>

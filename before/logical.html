@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical problem</title>
+</head>
+<body>
+    
+
+     <script>
+//      Problem 1: Two Sum (Classic)
+// Given: An array of integers nums and a target integer target.
+// Return: Indices of two numbers such that they add up to target.
+
+// Example:
+// Input: [2, 7, 11, 15], target = 9 → Output: [0, 1] (because 2 + 7 = 9)
+    
+// function twoSum(nums, target) {
+//     for (let i = 0; i < nums.length; i++) {         // first number
+//         for (let j = i + 1; j < nums.length; j++) { // second number
+//             if (nums[i] + nums[j] === target) {
+//                 return [i, j];  // return the positions
+//             }
+//         }
+//     }
+// }
+
+     
+// console.log(twoSum([2, 7, 11, 15], 9));
+
+
+// 1. sum of two numbers 
+function sum (a, b){
+    return a + b;
+}
+console.log(sum(12,34));
+
+
+//2. check the number is even 
+function isEven (num){
+    return num  % 2 ===0;
+}
+console.log(isEven(22,44,55,66));
+
+// 2. find the lagest among two 
+
+function isLargest(a,b){
+    return a > b ? a:b
+}
+console.log(isLargest(12,44));
+
+// 3. find the largest of there number 
+
+function largestofThree(a,b,c){
+    return Math.max(a,b,c);
+}
+console.log(largestofThree(33,34,56));
+
+// largest number in the array
+
+function largeNumber(arr) {
+  return Math.max(...arr);
+}
+
+console.log(largeNumber([1, 3, 4, 5, 6, 76]));
+
+    </script>
+</body>
+</html>

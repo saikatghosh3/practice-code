@@ -273,3 +273,19 @@ for(let i= 1; i<= rows; i++){
     }
     console.log(seatRow);
 }
+
+
+class Person {
+    sayHello() {
+      console.log("Hello!");
+    }
+  }
+
+  Person.sayHello();
+  
+  const person1 = new Person();
+
+  const person2 =new Person();
+  
+//   person1.sayHello(); 
+  
