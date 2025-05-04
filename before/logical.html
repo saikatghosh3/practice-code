@@ -57,13 +57,120 @@ function largestofThree(a,b,c){
 }
 console.log(largestofThree(33,34,56));
 
-// largest number in the array
+// 4.largest number in the array
 
 function largeNumber(arr) {
   return Math.max(...arr);
 }
 
 console.log(largeNumber([1, 3, 4, 5, 6, 76]));
+
+// 5. check the number is positive negetive or zero
+
+function checkNumber(num){
+    if(num > 0 ) return "The number is positeve";
+    else if (num < 0 ) return "The number is negetive";
+    else return "The number is zero";
+}
+console.log(checkNumber(11));
+console.log(checkNumber(-11));
+console.log(checkNumber(0));
+
+//6. check the charter is  vowel.
+
+
+function isVowel(char) {
+    return "aeiouAEIOU".includes(char);
+}
+console.log(isVowel("e"));
+
+
+// 7.sum the number
+
+function sumNumber(n){
+    let sum = 0;
+    for(let i = 0; i<=n; i++){
+        sum += i; 
+
+    }
+    return sum;
+}
+console.log(sumNumber(5));
+
+// 8 factorial of a number 
+
+function factorial(n){
+    let result = 1;
+    for(let i=2;i<=n; i++){
+       result *=i;
+    }
+    return result;
+}
+console.log(factorial(20));
+ 
+// 9 Reverse a string 
+function reverString(str){
+    return str.split('').reverse().join('');
+}
+console.log(reverString("hihowareyou.")); 
+
+// 10 find the smallest number of the array
+
+function findMin(arr){
+    return Math.min(...arr);
+}
+console.log(findMin([1,3,45,6,7,8,89,9,]));
+
+// sum all the elements in an array
+
+function sumAll(arr){
+    return arr.reduce((sum, num)=> sum + num, 0);
+}
+console.log(sumAll([1,2,3,54,6,7]));
+
+
+// count the even number in an array 
+function countEven(arr) {
+    return arr.filter(num => num % 2 === 0).length;
+}
+
+console.log(countEven([1,2,3,4,5,6]));
+
+// check an array contians a specific Element
+
+function spElement(arr, elem){
+    return arr.includes(elem)
+}
+console.log(spElement([1,2,3,4,5,], 5));
+
+// find the index of an element
+
+function findIndex(arr, elem){
+    return arr.indexOf(elem);
+}
+console.log(spElement([1,2,3,4,5,], 5));
+
+// check the str is palaindrome. 
+function isPalaindrome (str){
+    let reserved = str.split('').reserve().join("");
+    return reserved === str
+}
+console.log(isPalaindrome("hello"));
+
+
+// remove the duplicate form the array
+function removeDuplicate(arr){
+     return [...new Set(arr)];
+}
+console.log(removeDuplicate([1,2,3,4,5,5,5,6,7,7,77]));
+
+// convert celcius to farenhite
+
+function Convert(celcius){
+    return (celcius * 9/5) + 32;
+}
+console.log(Convert(33));
+
 
     </script>
 </body>
