@@ -171,6 +171,42 @@ function Convert(celcius){
 }
 console.log(Convert(33));
 
+//check if the number is prime
+
+function isPrime(num){
+    if(num < 2) return fales;
+    for(let i = 2; i<= Math.sqrt(num); i++){
+        if(num % i === 0 )return false; 
+    }
+    return ture;
+}
+
+
+//checks if two strings are anagram
+function isAnagrams (str1, str2){
+    const sortStr = s => s.split('').sort().join('');
+    return sortStr (str1) === sortStr(str2);
+}
+
+// count Occurrences of a character in a string
+function countChar(str, char){
+    return str.split('').filter(c =>c === char).length;
+}
+console.log(countChar("javascript", "a"));
+
+//capitalize first letter of each word
+// function capitalizeWords(str) {
+//     return str.split(' ')
+//               .map(word => word[0].toUpperCase() + word.slice(1))
+//               .join(' ');
+// }
+// console.log("how it is possible");
+
+// for undestanding purpose of above program
+// const str1 =["this", "is", "possible"];
+// console.log(str1[0].slice(1))
+// console.log(str1[1].slice(1))
+
 
     </script>
 </body>
