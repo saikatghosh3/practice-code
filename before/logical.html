@@ -207,6 +207,61 @@ console.log(countChar("javascript", "a"));
 // console.log(str1[0].slice(1))
 // console.log(str1[1].slice(1))
 
+// find the second largest number in an array 
+function secondLargest (arr){
+    let unique = [...new Set(arr)];
+    unique.sort((a,b)=> b-a);
+    return unique [1];
+}
+console.log(secondLargest([1,2,3,4,5,5,6,6,6,,888,8]));
+
+// check the number is perfect square 
+function isperfectSquare(num){
+    return Number.isInteger(Math.sqrt(num));
+}
+console.log(isperfectSquare(144));
+
+// flatten the nested array (1 level deep)
+
+function flattenArray(arr){
+    return arr.flat();
+}
+// find all unique elements in two arrays
+
+
+function uniqueElements(arr1, arr2){
+    return [...new Set([...arr1,...arr2])];
+}
+// Count the Number of properties
+
+const obj = {
+    name: "saikat", 
+    age: 34,
+    class: 10
+}
+function countProperties(obj){
+    return Object.keys(obj).length;
+}
+console.log(countProperties(obj))
+
+// check if the number is empty
+function isEmpty(obj) {
+    return Object.keys(obj).length === 0;
+}
+console.log(isEmpty(obj));
+
+
+// count the number 1 to n;
+for(let i = 1; i<= 10 ; i++){
+    console.log(i);
+}
+// generate random float between 0 and 1
+function randomFloat() {
+    return Math.random();
+}
+console.log(randomFloat());
+console.log(randomFloat());
+
 
     </script>
 </body>
