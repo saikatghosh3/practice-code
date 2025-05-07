@@ -261,6 +261,124 @@ function randomFloat() {
 }
 console.log(randomFloat());
 console.log(randomFloat());
+// get current date as stirng
+function currentDate(){
+  const date =  new Date()
+  return date.toDateString();
+}
+// calculate age 
+
+
+function calculateAge (bithYear){
+    const currentYear = new Date().getFullYear();
+    return currentYear - bithYear;
+}
+console.log(calculateAge(1996));
+
+// simple person class
+class Person {
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+    }
+    greet(){
+        return ` hi, i'm ${this.name}and i'm ${this.age}years old`;
+    }
+}
+
+// class inhertance example
+
+class Animal {
+    speak(){
+        return "animal sound";
+    }
+}
+
+class Dog extends Animal{
+    speak(){
+        return "woof";
+    }
+}
+ let animal = new Animal();
+ let dog = new Dog();
+
+ console.log((animal.speak()));
+ console.log((dog.speak()));
+ 
+// simple promise resolve
+
+
+function promiseResolve(promise){
+    return Promise.resolve("Done");
+}
+// async function fetch data example
+
+async function fetchData(url){
+    const response = await fetch(url);
+    const data = await response.json()
+    return data;
+}
+
+
+// Reverse the Digit of a Number 
+
+function reverserNumber(num){
+    return parseInt(num.toString().split(''.reverse().join('')));
+}
+
+
+// check the number is leap year or not
+
+function isLeapyear (year){
+    return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+}
+console.log(isLeapyear(2003));
+
+// Check if a String is a Palindrome (Ignoring Case)
+
+function isPalaindrome(str){
+    let str = str.toLowerCase();
+    return str === str.split('').reverse().join('');
+}
+//  find common Element between two arrays 
+function commonElements(arr, arr1){
+    return arr.filter(item=> arr1.includes(item));
+}
+console.log(commonElements([1,2,3,5,6,], [1,2,6]));
+
+// simple interest calculator
+
+function simpleInterest(principal, rate, time){
+    return (principal*rate*time)/100;
+}
+console.log(simpleInterest(2000, 0.06, 3));
+
+// capitalize the first letter only
+
+function capitalizeFrist(str){
+    return str[0].toUpperCase() + str.slice(1);
+}
+console.log(capitalizeFrist("hello how are you?"))
+
+// swap two variable using destructuring
+
+let a = 1; b = 3;
+[a,b] = [b,a]
+// merge two array (spread operator)
+function mergeArrays(arr1,arr2){
+    return [...arr1,...arr2];
+}
+
+// find the min and max in an array (spread + math)
+
+function findMinMax(arr){
+    return {min: Math.min(...arr),max: Math.max(...arr)}}
+// convert an array to a comma-separated string
+
+function arraytoString(arr){
+    return arr.join(",");
+}
+console.log(arraytoString([1,2,34,5,6,7]));
 
 
     </script>
