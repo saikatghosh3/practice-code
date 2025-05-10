@@ -380,7 +380,82 @@ function arraytoString(arr){
 }
 console.log(arraytoString([1,2,34,5,6,7]));
 
+// dom and es6 related problem
+// select id and change its text 
 
+document.getElementById("myheading").innerText = "new Heading";
+
+//  select All paragraph and log their text 
+
+document.querySelectorAll("p").forEach(p=>{
+    console.log(p.innerText);
+});
+
+//   create a new li and append it to a list 
+
+const li = document.createElement("li");
+li.textContent = "New Item";
+document.querySelector("ul").appendChild(li);
+
+// remove an Element by Id 
+const element  = document.getElementById("toRemove");
+element.remove();
+
+// change the src of an image 
+document.querySelector("img") .src = "new-image.jpg";
+
+// set Multiple css style using jsvascript 
+    
+
+    const box = document.getElementById("box");
+    box.backgroundColor = "yellow";
+    box.style.width = "200px";
+    box.style.height = "200px";
+  
+    // add a class to an element 
+    document.getElementById("myDiv").classList.add("highlight");
+
+
+    // Toggle a class on button click
+
+    document.getElementById("myBtn").addEventListener("click", ()=> {
+        document.getElementById("myDiv").classList.toggle("active");
+    });
+    
+    // Handle form submit (prevent default)
+document.getElementById("form").addEventListener("submit", (e)=> {
+    e.preventDefault();
+    alert("form submitted successfully")
+})
+// add mouseOver event to change Text color
+document.getElementById("hoverMe").addEventListener("mouseover", ()=>{
+    hoverMe.style.color = "red";
+});
+
+// Destructure an array into variables
+
+const colors = [ "red", "green", "blue"];
+cont [first, second , third] = colors;
+console.log(first);
+
+// for object
+
+const Person = {name: "jhon", age: 30};
+const {name, age} = Person;
+console.log(name);
+
+
+// merge two object 
+
+const obj1 = {a:1}
+const obj2 = {b:2}
+
+const merged = {...obj1,...obj2};
+
+
+// check if an Element has a class 
+const hasClass = document.getElementById("myDiv").classList.contains("active");
+console.log(hasClass);
     </script>
 </body>
 </html>
