@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Character Counter</title>
+</head>
+<body>
+  <textarea id="msg" maxlength="100"></textarea>
+  <p id="count">0 / 100</p>
+
+  <script>
+    const msg = document.getElementById("msg");
+    const count = document.getElementById("count");
+
+    msg.addEventListener("input", () => {
+      const len = msg.value.length;
+      count.innerText = `${len} / 100`;
+    });
+  </script>
+</body>
+</html>

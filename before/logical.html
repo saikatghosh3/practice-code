@@ -6,7 +6,9 @@
     <title>Logical problem</title>
 </head>
 <body>
-    
+<!-- <input type = "password" id = "password">
+ <button id = "toggle"> show </button> -->
+ 
 
      <script>
 //      Problem 1: Two Sum (Classic)
@@ -456,6 +458,33 @@ const merged = {...obj1,...obj2};
 // check if an Element has a class 
 const hasClass = document.getElementById("myDiv").classList.contains("active");
 console.log(hasClass);
+
+
+// disable a button
+
+const diBtn = document.getElementById("submitBtn").disabled = true;
+
+//   now advance concept 
+
+// show and hide password toggle 
+
+// <input type = "password" id = "password">
+// <button id = "toggle"> show </button>
+
+document.getElementById("toggle").addEventListener("click", () => {
+  const pass = document.getElementById("password");
+  if (pass.type === "password") {
+    pass.type = "text";
+    toggle.innerText = "Hide";
+  } else {
+    pass.type = "password";
+    toggle.innerText = "Show";
+  }
+});
+
+
+
+
     </script>
 </body>
 </html>
