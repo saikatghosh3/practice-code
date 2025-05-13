@@ -483,7 +483,105 @@ document.getElementById("toggle").addEventListener("click", () => {
 });
 
 
+// promise and async / await 
 
+// create a promise that resolves with done! after 1 second.
+const mypromise = new Promise((resolve, reject)=> {
+    setTimeout(()=> {
+        resolve("Done!");
+    }, 1000);
+});
+myPromise.then(result =>console.log(result)); // output : Done!
+
+// Promise that reject 
+// create a promise that rejects with an error after 2 seconds 
+ const failPromise = new Promise((_, reject)=>{
+    setTimeout(()=>{
+        reject("Something went wrong!");
+    }, 2000)
+ });
+
+ failPromise.then(res=> console.log(res))
+ .catch(err=> console.log("Error: ", err));
+
+//  Use fetch () to get json data 
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+.then(res=> res.json())
+.then(data => console.log(data))
+.catch(err => console.log("Fetch error:", err));
+
+
+// convert to async / await 
+async function  getPost() {
+    try{
+        const res = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+        const data = await res.json();
+        console.log(data);
+    }catch(err){
+        console.log("Error:", err);
+    }
+}
+getPost();
+
+
+// wait for Multiple Promises (promise.all)
+
+// Run 2 async task in parallel and wait for both to finish
+
+const p1 = new Promise(resolve=> setTimeout(()=> resolve("Frist"), 1000));
+const p2 = new Promise(resolve=> setTimeout(()=> resolve("second"), 2000));
+
+Promise.all ([p1, p2]).then(values=>{
+    console.log(values);
+});
+
+
+// race between 2 pramise (promise.race)
+
+const p3 = new Promise (resolve=> setTimeout(()=> resolve("One"), 1000));
+const p4 = new Promise (resolve=> setTimeout(()=> resolve("Two"), 500));
+
+Promise.race ([p3, p4]).then(value=> {
+    console.log(value); 
+})
+
+// chaining promises 
+
+promise.resolve(5).then(num=> num*2)
+.then(num => num + 10)
+.then(result => console.log(result));
+
+Error handling with async await
+// throw an error and catch it properly
+
+async function testError() {
+    try{
+        throw new Error("Manual error!");
+
+    }catch(e){
+        console.log("caught : ",e.msg);
+    }
+}
+testError();
+
+
+
+
+// Loop through the Api result using async/ await 
+// fetch a list of posts and log titles 
+
+async function  getPosts() {
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+
+    const posts = await res.json();
+
+
+    posts.slice(0,5).forEach(post => {
+        console.log(post.title);
+    });
+}
+
+getPosts ();
 
     </script>
 </body>
