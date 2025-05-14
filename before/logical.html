@@ -583,6 +583,69 @@ async function  getPosts() {
 
 getPosts ();
 
+// closure
+function outer (){
+    let count = 0;
+
+    function  inner (){
+      count ++ ;
+      console.log(count);
+    }
+  }  return inner;
+
+
+const counter = outer();
+
+counter ();
+counter ();
+counter ();
+
+// what is callback in js
+
+Defination: 
+
+// A callback is a function that is passed as an argument to another function 
+// and called later.  It's way to do something after something else finishes 
+
+function greet(name, callback){
+    console.log("hello", + name);
+    callback(); // we call the funcion passed in 
+}
+function sayBye(){
+    console.log("Goodbye!");
+}
+
+greet ("saikat", sayBye);
+
+// wtih setTimeout (delayed callback)
+
+setTimeout(function(){
+    console.log("this runs after 2 seconds.")
+},2000);
+
+
+// what is a higer order function ?
+
+// a higher order function is function that does at least one of the following
+// 1. Takes another function as an argument
+// 2. Returns a function
+// if a function does one of those -it's a higher order function.
+
+function sayHello(){
+    console.log("Hello");
+}
+
+function greetUser(callback){
+    console.log("user greeting: ");
+    callback();
+}
+
+greetUser(sayHello);
+
+// greetUser is  a higher-order function. because it takes sayHello (a function as) input.
+
+
+
     </script>
 </body>
 </html>
