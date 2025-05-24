@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z-index practice </title>
+    <style>
+
+
+.parent {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.child {
+  height: 90px;
+  width: 90px;
+  background-color: green;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 2;
+}
+
+.child1 {
+  height: 90px;
+  width: 90px;
+  background-color: rgb(154, 40, 171); /* purple */
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+}
+
+/* the above code is perfect for understanding z index .  */
+
+/* now i want to make an another div what will overlap everthing. */
+
+
+.overlay {
+  height: 100px;
+  width: 100px;
+  background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999; /* HIGH value to ensure it sits on top */
+}
+
+    </style>
+</head>
+<body>
+ <div class="parent">
+    <div class="child"></div>
+    <div class="child1"></div>
+ </div>
+
+ <div class="overlay"></div> <!-- NEW div to go on top -->
+
+</body>
+</html>
