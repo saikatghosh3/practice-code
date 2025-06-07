@@ -545,3 +545,15 @@ async function fetchUserAndPosts(params) {
 
 
   const doubled2 = numbers.map();
+
+
+  what is  a higher order function ?
+//    a higher order function take a function as an argument or return a function 
+
+const nums = [1, 2, 3];
+const doubled = nums.map(function (num) {
+  return num * 2;
+});
+
+console.log(doubled); // [2, 4, 6]
+
