@@ -557,3 +557,77 @@ const doubled = nums.map(function (num) {
 
 console.log(doubled); // [2, 4, 6]
 
+
+//create a function that returns a counter that increases each time it is called
+
+function createCounter(){
+let count = 0;
+return function(){
+    count ++;
+    return count;
+}
+}
+
+const counter = createCounter();
+console.log(counter());
+console.log(counter());
+console.log(counter());
+
+// use a callback to run a function after greeting 
+
+function greet (name, callback){
+   console.log(`Hi , ${name}!`);
+   callback();
+}
+
+function sayBye(){
+    console.log("goodBye!");
+}
+
+greet ("Saikat", sayBye);
+
+// Log a message after 2 seconds using a callback. 
+function delayRun(callback){
+    setTimeout(callback, 2000);
+}
+
+delayRun(()=>{
+    console.log("Executed after 2 seconds")
+});
+
+//create a simple version of  map()
+
+function customMap(arr, func){
+    let result = [];
+    for (let i = 0; i<arr.length; i++){
+        result.push(func(arr[i]));
+    }
+}
+console.log(customMap([1,2,3], x=> x*2));
+
+
+// Create a function athat retuns another function to multiply by a fixed number
+
+
+function multiplier(x){
+    return function(y){
+        return x*y;
+    }
+}
+
+const triple = multiplier(3);
+console.log(triple(4));
+
+
+
+// in const triple = multiplier(3), x = 3; then it retuns below function
+// function(y){
+// return 3 * y ; 
+// }
+
+
+// then at the time of calling triple(4);
+// y = 4 , from earlier x was already set 3 and follow the closure 
+
+// Even though multiplier(3) is done executing,
+// the returned function remembers x = 3 — this is called a closure.
