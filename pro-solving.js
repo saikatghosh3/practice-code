@@ -547,7 +547,7 @@ async function fetchUserAndPosts(params) {
   const doubled2 = numbers.map();
 
 
-  what is  a higher order function ?
+//   what is  a higher order function ?
 //    a higher order function take a function as an argument or return a function 
 
 const nums = [1, 2, 3];
@@ -631,3 +631,28 @@ console.log(triple(4));
 
 // Even though multiplier(3) is done executing,
 // the returned function remembers x = 3 — this is called a closure.
+
+
+
+//Higher order filter even numbers
+
+const numbers3 = [1,2,3,4,5,6,7,8];
+const evens = numbers3.filter(num=> num % 2 === 0);
+console.log(evens);
+
+
+// a counter that you can also reset
+
+function createCounter(){
+    let count = 0;
+    return {
+        next: ()=>++ count, 
+        reset : ()=> count = 0
+    };
+}
+
+const myCounter = createCounter();
+console.log(myCounter.next());
+console.log(myCounter.next());
+myCounter.reset();
+console.log(myCounter.next())
