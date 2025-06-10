@@ -656,3 +656,31 @@ console.log(myCounter.next());
 console.log(myCounter.next());
 myCounter.reset();
 console.log(myCounter.next())
+
+
+// understanding this in arrow and normal function 
+
+const Person ={
+    name: "saikat", 
+    age: 27,
+    sayHello: function (){
+        console.log("Hi", + this.name)
+    },
+    arrowHello: ()=>{
+        console.log("Hi," + this.name)
+    }
+}
+
+person.sayHello();
+person.arrowHello();
+//  Because arrow functions do not bind their own this
+//   — they take it from the outer scope (which is likely window or undefined 
+//     in strict mode).
+
+//  SetTimeout inside loop (fix with closure)
+
+for(var i = 1; i<= 3; i++){
+    setTimeout(()=>{
+        console.log(i);
+    },1000);
+}
