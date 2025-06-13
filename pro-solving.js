@@ -684,3 +684,57 @@ for(var i = 1; i<= 3; i++){
         console.log(i);
     },1000);
 }
+
+//async / await
+
+function wait (ms){
+ return new Promise(resolve=> setTimeout(resolve, ms));
+}
+async function   run() {
+    await wait(1000);
+    console.log("step 1");
+    await wait (1000);
+    console.log("setp 2")
+}
+
+run();
+
+// Dom manipulation
+<button id="btn"> </button>
+<p id =" output"></p>
+
+const btn = document.getElementById("btn");
+const output= document.getElementById("output")
+btn.addEventListener("click", ()=>{
+    output.innertext = "You clicked the button!"
+})
+
+// reverse the string 
+
+function reverseString(str){
+    return str.split('').reverse().join('')
+}
+
+// flat the nested array 
+
+const nested = [1, [2, [3, 4]], 5];
+const flatt = nested.flat(2);
+console.log(flatt);
+
+// here flat(1) goes 1 level deep 
+// and flat(2) goes 2 level deep 
+
+// object destructuring 
+
+const user5 = {name: "saikat", age2: 27}
+ const {name, age2} = user5;
+ console.log(age2);
+ console.log(name);
+
+ // default parameter
+
+ function random (name= "Guest"){
+    return `Hello, ${name}`;
+ }
+ console.log(random());
+ console.log(random("saikat"));
