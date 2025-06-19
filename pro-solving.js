@@ -738,3 +738,76 @@ const user5 = {name: "saikat", age2: 27}
  }
  console.log(random());
  console.log(random("saikat"));
+
+
+ // debouncing button click, only stops when user stops clicking for 500ms
+
+ let timeout;
+ document.getElementById("btn").addEventListener("click", ()=>{
+    clearTimeout(timeout);
+    timeout = setTimeout(()=>{
+        console.log("Button clicked after pause");
+    },500)
+ })
+
+//  store and get name from Local storage 
+
+localStorage.setItem("name", "Saikat");
+console.log(localStorage.getItem("name"));
+
+// simple Event Bubbling
+<div id="parent">
+    <button id="child">Click Me</button>
+</div>
+ 
+ document.getElementById("parent").addEventListener("click", ()=>{
+    console.log("parent clicked");
+ });
+
+ document.getElementById("child").addEventListener("click", (e)=>{
+    console.log("Child clicked");
+    e.stopPropagation();// this is to  prevent bubbling
+ });
+
+ // convert NdeList to array
+ const item = document.querySelectorAll("li");
+ const arr = Array.from(item);
+
+ // capitalize First letter of Each word 
+ function capitalize(str){
+    return str.split(" ").map(word=> word[0].toUpperCase()+word.slice(1)).join(" ")
+    console.log(capitalize("hello world"));
+
+
+ }
+
+
+//  check palindrome (str)
+
+
+function isPlaindrome(str){
+    return str === str.split("").reverse().join("");
+}
+console.log(isPalindrome("madam"));                   
+console.log(isPalindrome("saikat"));   
+
+// Find the max from Array
+const arr = [5,3,8, 1];
+const max = Math.max(...arr);
+console.log(max);
+
+// check if Object is Empty
+function isEmpty (obj){
+    return Object.keys(obj).length === 0;
+}
+console.log(isEmpty({}));
+console.log(isEmpty({a:1}));
+
+// Disble Button After Click 
+<button id="btn">Submit</button>
+ 
+ const btn = document.getElementById("btn");
+btn.addEventListener("click", ()=> {
+  btn.disablled = true;
+  btn.innerText = "submitted";
+})
