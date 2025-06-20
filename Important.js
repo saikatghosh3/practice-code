@@ -96,3 +96,6 @@ for (var i = 0; i <= 5; i++) {
 
 // It’s not just because of block scope, but because of a feature in JavaScript
 //  called “per-iteration binding”.
+
+
+

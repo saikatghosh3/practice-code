@@ -811,3 +811,64 @@ btn.addEventListener("click", ()=> {
   btn.disablled = true;
   btn.innerText = "submitted";
 })
+
+
+
+
+//use .call to borrow function 
+
+function greet (){
+    console.log(`Hello I'm ${this.name}`)
+}
+const user = {name: "Saikat"};
+greet.call(user);
+// .call lets you set the value of this.
+
+// use .apply with arguments
+function intro (age, city){
+    console.log( `${this.name} is ${age} years old and lives in ${city}`)
+}
+
+const person = {name: "saikat"};
+intro.apply(person, [25,"Dhaka"]);
+// .apply ( ) is like .call but takes arguments as an array 
+
+//   use .bind() to create a fixed function 
+const person = {name: "saikat"};
+function sayHi (){
+    console.log("hi," + this.name);
+
+}
+
+
+const greet = sayHi.bind(person)
+greet();
+
+// short -circuiting with || and && 
+
+console.log("" || "Hello");  // it will print Hello if the first one is false
+console.log("hi" && "Bye");    //it will print bye of both are ture
+
+// ternary operator  
+
+const age = 18;
+const msg = age >= 18? "Adult": "Minor"
+console.log(msg)
+
+// merge Two array without duplicates 
+
+const a = [1,3,4,5,6,];
+const b = [2,3,4,56,8,9,0,9];
+
+const merged = [...new Set([...a,...b])];
+console.log (merged);
+
+// convert object to Array
+
+const user = {
+    name: "Saikat",
+    age = 27
+}
+
+const entries = Object.entries(user);
+console.log(entries);
