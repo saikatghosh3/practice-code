@@ -55,3 +55,44 @@ function fizzBuzz(n) {
   }
 }
 fizzBuzz(15);
+
+// capitlize first letter of each word 
+function capitalizeWords(str) {
+  return str.split(' ').map(word =>
+    word.charAt(0).toUpperCase() + word.slice(1)
+  ).join(' ');
+}
+console.log(capitalizeWords("hello world from js"));
+
+
+// Find the second largest number
+function secondLargest (arr){
+  let unique = [...new Set(arr)];
+  unique.sort((a,b)=> b -a);
+
+
+  return unique[1];
+  
+
+}
+
+console.log(secondLargest([1,2,3,4,5,5,6,6,7]));
+
+// the above logic work like this 
+// a	b	b - a	Meaning
+// 5	2	-3	Keep 5 before 2
+// 9	5	-4	Keep 9 before 5
+// 1	2	1	Put 1 after 2
+
+// basic problem  convert celsious to Faherheit 
+
+function toFahrenheit(celsious){
+  return (celsious * 9/5) + 32;
+}
+console.log(toFahrenheit(30));
+
+// merge two arrays without duplicates
+function mergeUnique(a,b){
+  return [...new Set (...a, ... b)];
+}
+console.log(mergeUnique([1,2,3,4], [2,3,4,5]));
