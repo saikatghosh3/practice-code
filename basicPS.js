@@ -96,3 +96,52 @@ function mergeUnique(a,b){
   return [...new Set (...a, ... b)];
 }
 console.log(mergeUnique([1,2,3,4], [2,3,4,5]));
+
+
+
+// find the longest word in sentence 
+
+function longest(str){
+  return str.split(' ').reduce((longest, current)=>
+  current.length > longest.length? current: longest);
+}
+console.log(longest("The quick brown fox jumps over the lazy fox"));
+
+// here for better understanding we can use a, b also 
+function longest(str){
+  return str.split(' ').reduce((a, b)=>
+  a.length > b.length? a: b);
+}
+console.log(longest("The quick brown fox jumps over the lazy fox"));
+
+// the answer will be jupms  but quick could also be the answer but it is not. the reason is below 
+// a.length > b.length → false (because equal)
+
+// Returns b
+
+// now reduce concept  
+
+// syntax
+array.reduce((accumulator, currentValue) => {
+  // return updated accumulator
+}, initialValue);
+// accumulator → Stores the result of the previous computation.
+
+// currentValue → The current item in the array.
+
+// initialValue (optional but recommended) → The starting value of the accumulator.
+
+// more example on reduce 
+
+// calculate the sum
+const numbers = [1,2,3,4,5,6];
+const sum = numbers.reduce((acc, curr)=> acc + curr, 0);
+console.log(sum);
+
+// find the maximum value 
+
+const number = [4, 9, 1, 7];
+
+const max = number.reduce((acc, curr) => curr > acc ? curr : acc);
+
+console.log(max);
