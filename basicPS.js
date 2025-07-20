@@ -145,3 +145,41 @@ const number = [4, 9, 1, 7];
 const max = number.reduce((acc, curr) => curr > acc ? curr : acc);
 
 console.log(max);
+
+
+// Take an array of numbers and return the smallest number
+ function samllestNumber(arr){
+   return Math.min(...arr);
+ }
+ console.log(samllestNumber([1,3,4,5,6,7,8]));
+
+ // Take an array of numbers and return the total sum of all elements
+ function sumArray(arr){
+  return arr.reduce((a,b)=> a + b, 0);
+ }
+ console.log(sumArray([1,2,3,4,5,6,7]));
+
+ // Take an array of numbers and retun the multiplication of all elements
+
+ function productArr(arr){
+  return arr.reduce ((a,b)=> a *b, 1);
+
+ }
+console.log(productArr([1,3,4,5,6,7]));
+
+// Take an array return the average value.
+function average(arr){
+  return arr.reduce((a,b)=> a +b, 0) / arr.length;
+}
+console.log(average([13,4,5,6,7,8]));
+
+
+
+
+// Take an array and return it in reverse order
+
+function reverseArr(arr){
+  return arr.slice().reverse();
+
+}
+console.log(reverseArr([1,3,4,5,6]));
