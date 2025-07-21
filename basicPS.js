@@ -183,3 +183,48 @@ function reverseArr(arr){
 
 }
 console.log(reverseArr([1,3,4,5,6]));
+
+
+//Take an array and a number and return true if the number exists
+function numberExists ( arr, num){
+  return arr.inclucdes(num);
+}
+console.log(numberExists([4,5,6,7], 5));
+
+//Take an array of stings and revmove all empty strings.
+
+function removeString (arr){
+  return arr.filter(str => str.trim() !== '');
+}
+console.log(removeString(["hello", "", " ", " world"]));
+
+// double each Number in array 
+// Take an array of numbers and return a  new array with each number doubled.
+function double(arr){
+  return arr.map(n => n * 2);
+}
+console.log(double([1,2,3]));
+
+// Take an array and a number and return a new array without that number
+function removeNumber (arr, num){
+  return arr.filter(n => n !== num)
+}
+console.log(removeNumber([1,2,3,4,5,6,7],3));
+
+// easy problem
+// Take an array and return its first element.
+ function  firstElement(arr){
+  return arr[0];
+ }
+ console.log(firstElement([12,30,40]));
+
+ // Take an array and  return its last element. 
+ function lastElement (arr){
+  return arr[arr.length -1];
+ }
+ console.log(lastElement([10,20,30,40]));
+
+//  now it is tricky
+// the reson is  it has index number 0,1,2,3 but it's length is 4 
+// so, in order to get the last elemnt we are doing substruction. 
+// it is a combination of  index and length;
