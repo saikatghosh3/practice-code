@@ -228,3 +228,55 @@ console.log(removeNumber([1,2,3,4,5,6,7],3));
 // the reson is  it has index number 0,1,2,3 but it's length is 4 
 // so, in order to get the last elemnt we are doing substruction. 
 // it is a combination of  index and length;
+
+
+
+//check all numbers are even 
+
+function allEven (arr){
+  return arr.every(n=> n %2 === 0 );
+}
+console.log((allEven([2,3,4,5,6])));
+console.log((allEven([2,4,6])));
+
+// Take an array and a number, return a new array of all values greater than the number
+function greaterThan(arr, value){
+  return arr.filter(n=> n> value);
+  
+}
+console.log(greaterThan([2,3,8,1], 4));
+
+// Take an array of string and return them joined by a dash - . 
+
+function joinWithDash(arr){
+  return arr.join('');
+}
+console.log(joinWithDahs("a", "b", "c"));
+
+// Take an array of numbers and return an arry of strings
+
+function  numbertoStings(arr){
+  return arr.map(num=>num.toString());
+}
+console.log(numbertoStings([1,3,4]));
+
+
+// Take an array of words and retun the longest one
+function longestWord(arr){
+  return arr.reduce((a,b)=> b.length > a.length ? b : a, '');
+}
+console.log(longestWord(["hi", "hello", "goodbye"]));
+
+// Take an array of numbers and replace all 0 with the stirng "Zero"
+
+function replaceZero(arr){
+  return arr.map(n=> n === 0 ? "zero": n);
+}
+console.log(replaceZero([1,2,0,3, 0]));
+
+// Take two arrays of words and return all unique words combined
+
+function uniqueWrods (a,b){
+  return [...new Set([...a,...b])];
+}
+console.log(uniqueWrods(["a", "b"], ["b", "c"]));
