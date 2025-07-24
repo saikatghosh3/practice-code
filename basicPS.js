@@ -280,3 +280,75 @@ function uniqueWrods (a,b){
   return [...new Set([...a,...b])];
 }
 console.log(uniqueWrods(["a", "b"], ["b", "c"]));
+
+
+// Remove last element for the array
+
+function removeLast(arr){
+  return arr.slice(0 , -1)
+}
+console.log(removeLast([1,2,3]));
+
+// Take an array of numbers and return a new array with each number squared.
+function squareNumber(arr){
+  return arr.map(n=> n*n);
+}
+console.log(squareNumber([1,2,3,4,5,6]));
+
+// Return ture if all elements in the array are strings
+
+function checkString(arr){
+  return arr.every(item => typeof item === 'string');
+}
+console.log(checkString(["a", "b", "c"]));
+
+// Take an array and remove all falsy values (false, 0, null, "", undefined, NaN)
+
+function removeFalsy(arr){
+  return arr.filter(Boolean);
+
+}
+console.log(removeFalsy([0, "hi", "", false, 5, null]));
+
+//Take an array and return the count of numbers greater than 0. 
+
+function countPositve(arr){
+  return arr.filter(n=> n> 0).length;
+}
+
+console.log(countPositve([-1, 0, 5, 3]));
+
+// the above code will return only the count . because of .lenght
+// It doesn't care what's inside. It just counts how many items are in an array:
+
+// if we want to get the positive number then the code will be 
+
+function getPositiveNumber(arr){
+  return arr.filter(n => n > 0)
+}
+
+console.log(getPositiveNumber([1, -1, -3, 4, 5,-5]));
+
+
+// if the array has odd length , return 1 middle element . if even , return 2
+
+function getMiddle(arr){
+  const mid = Math.floor(arr.length / 2);
+  return arr.length %2 === 0 ? [arr[mid-1], arr[mid]] : [arr[mid]]
+  // here mid was returning a length. and a[] was   used to get the index. 
+}
+console.log(getMiddle([1, 2, 3, 4]));
+console.log(getMiddle([1, 2, 3]));
+
+
+// Take a string with multiple  sentences and capitalize each sentenc's first letter.
+
+function capitalizeSentece( str){
+  return str.split('. ').map(s=> s.charAt(0).toUpperCase() + s.slice(1)).join('. ')
+}
+console.log(capitalizeSentece("hello world. my name is js."));
+
+// behind the scene is is working like that 
+// s.charAt(0).toUpperCase() + s.slice(1)
+// // => "H" + "ello"
+// // => "Hello"
