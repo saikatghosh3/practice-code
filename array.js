@@ -53,3 +53,47 @@ const evens = numbers.filter((item) => item % 2 === 0);
 
 console.log(evens);    
 console.log(numbers);
+
+
+// Note: map will modify most of the Time and filter will be used to extreact someting. 
+
+
+// some problems related map and filter 
+
+// square all numbers 
+const a = [1,23,4,5]
+
+const result = a.map(n => n * n);
+console.log(result);
+
+// * as we changing value 
+
+// keep only positive numbers 
+
+const r = [-2,3,-5, 4, -6,0];
+const result = r.filter(n => n > 0);
+console.log(result);
+
+
+// Extract usernames from user objects 
+
+const users = [
+  { id: 1, username: 'alice' },
+  { id: 2, username: 'bob' },
+  { id: 3, username: 'charlie' }
+];
+
+const usernames = users.map(user => user.username);
+console.log(usernames);
+
+
+// Get users age> 18;
+const people = [
+  { name: 'John', age: 17 },
+  { name: 'Jane', age: 21 },
+  { name: 'Jim', age: 16 },
+  { name: 'Jack', age: 25 }
+];
+
+const result = people.filter(person=> person.age > 18);
+console.log(result);
