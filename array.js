@@ -97,3 +97,78 @@ const people = [
 
 const result = people.filter(person=> person.age > 18);
 console.log(result);
+
+// now we'll chain filter and map
+
+// filter even numbers and then double them with map
+
+const numbers  = [1,2,3,4,5,6,7,8,9];
+const result = numbers.filter(num => num % 2).map(num=> num *2);
+console.log(result);
+
+
+// now the concept of reduce   : reduces array to single value  using an accumulator.
+// reduce() takes an array and reduces it to a single value (number, string, object, etc.), by accumulating a result step-by-step.
+arry1.reduce((acc, curr, index, array)=> newAcc, intialValue);
+
+// accumulator: The running total/result so far
+
+// currentValue: Current item in the array
+
+// initialValue: Starting value for accumulator
+
+
+// example1: sum of numbers 
+const nums = [1,2,3,4];
+const total = nums.reduce((acc, curr)=> acc + curr, 0);
+console.log(total);
+
+
+// multiply all the numbers 
+
+
+const nums = [1,2,4,5];
+const result = nums.reduce((acc, curr)=> acc * curr, 1);
+console.log(product);
+
+
+
+// count how many times each number appears
+
+const nums = [1,3,3,3,4,5,5,6,7,];
+
+const count = nums.reduce((acc, curr)=>{
+  acc[curr] == (acc[curr] || 0 ) +1;
+  return acc;
+}, {});
+console.log(count)
+
+
+//  count words in a sentence 
+
+const sentence = "apple banana apple orange orange apple"
+
+const words = sentence.split(" ");
+
+const countWrods = words.reduce((acc, word)=>{
+  acc[word] = (acc[word] || 0) +1;
+  return acc;
+}, {});
+console.log(countWrods);
+
+// count letters ingnoring case
+
+const letters = ['A', 'a', 'b', 'B', 'c', 'd'];
+
+ const lowerCount = letters.reduce((acc, curr)=>{
+  const letter = curr.toLocaleLowerCase();
+  acc[letter] = (acc[letter] || 0) + 1;
+  return acc;
+ }, {});
+ console.log(lowerCount);
+
+
+ some tips:
+ reduce((acc, curr) => ..., {})  // when you’re building an object
+reduce((acc, curr) => ..., [])  // when you’re building an array
+reduce((acc, curr) => acc + curr)  // when you’re reducing to a number
