@@ -172,3 +172,64 @@ const letters = ['A', 'a', 'b', 'B', 'c', 'd'];
  reduce((acc, curr) => ..., {})  // when you’re building an object
 reduce((acc, curr) => ..., [])  // when you’re building an array
 reduce((acc, curr) => acc + curr)  // when you’re reducing to a number
+
+
+
+// now we will go for forEach method 
+
+// short explanation:
+// We use forEach() when we want to do something with each element in an array — 
+// like printing, logging, pushing into another array, or updating a value outside the loop 
+// — but we don’t need to build a new array.
+
+// Use Case----------------------------Use This
+// Loop and do something---------------forEach()
+// Return a new transformed----------------map()
+// Filter some items out	--------------filter()
+// Reduce to one result (sum, object, etc.)--	reduce()
+
+
+
+// example 1: 
+// just print every number nothing else
+const numbers = [1,2,3,4];
+numbers.forEach(num => {
+  console.log(num);
+});
+
+// push even numbers into another array 
+
+// array.forEach((item, index, array) => {
+//   // do something
+// });
+
+const nums = [1,2,3,4,5,6,7,8];
+let evens = [];
+
+nums.forEach(num => {
+  if(num %2 === 0){
+    evens.push(num);
+  }
+});
+
+
+// use for each to print square of each number
+const nums = [1, 3, 4, 5];
+let square = [];
+
+nums.forEach(num => {
+  square.push(num * num); 
+});
+
+console.log(square);
+
+
+// find () method: 
+// only find first mathing value
+// Good for finding:
+
+// A user by ID
+// A product by name
+// The first error, match, etc.
+
+// find 
