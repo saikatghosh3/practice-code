@@ -226,10 +226,29 @@ console.log(square);
 
 // find () method: 
 // only find first mathing value
+// if nothing match it will return undefined 
 // Good for finding:
 
 // A user by ID
 // A product by name
 // The first error, match, etc.
 
-// find 
+// syntax: array.find((item, index, array) => condition)
+
+
+// find student who have passed 
+
+const students = [
+  {name: "Asha ", marks : 40},
+  {name: "Bobby ", marks : 80},
+  {name: "juli ", marks : 90}
+];
+
+const passedStudent = students.find( student=>student.marks> 50);
+console.log(passedStudent); 
+
+// find the first even number 
+
+const numbers = [1,3,4,5,6,7];
+const firstEven = numbers.find(number => number %2 === 0);
+console.log(firstEven);
