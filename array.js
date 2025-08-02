@@ -252,3 +252,36 @@ console.log(passedStudent);
 const numbers = [1,3,4,5,6,7];
 const firstEven = numbers.find(number => number %2 === 0);
 console.log(firstEven);
+
+
+//     ****************************some method**************************
+// it is similar to find but return the Boolean value. if match 
+// Checks if at least one item passes the condition.
+// accept the callback function.
+
+// syntax: 
+// arr.some((item, index, array) => condition)  
+ const arr = [3,4,5,6,7];
+let hasEven = arr.some(n => n % 2  === 0);
+console.log(hasEven);
+
+// *****************************************includes *********************************************
+// Checks if a specific value exists, retun true and false 
+// Works on	Primitive values only (number, string)
+// Don't work on object
+
+const arr = [10, 20,30,40];
+console.log(arr.includes(30));
+
+console.log(arr.includes(50));
+
+
+// another 
+const users = [
+  {name: "alice", age:20},
+  {name: "bob", age:25}
+];
+
+
+const result = users.find(user=> user.name === "alice");
+console.log(result);

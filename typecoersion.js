@@ -128,4 +128,25 @@ for (let i = 0; i < arr.length; i++) {
 
 
 
+// some of the math problem 
+
+// *******************************************  Important******************************************
+const numbers = [1,3,4,56,7];
+
+const maximum = Math.max(numbers);
+console.log(maximum);
+//  result will be NaN
+
+// Math.max dont work with array  we have to use  spread operator
+
+const numbers = [1, 3, 4, 56, 7];
+const maximum = Math.max(...numbers); //  Spread the array into individual values
+console.log(maximum); // 56
+
+console.log(Math.ceil(4.5));
+console.log(Math.floor(6.8));
+console.log(Math.random());
+
+
+
 
