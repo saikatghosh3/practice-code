@@ -151,3 +151,47 @@ function sumEven(arr){
 
 }
 console.log(sumEven([1,3,4,5,6,7,8,9]));
+
+
+// . Count the Number of Words in a Sentence
+// Input: "JavaScript is awesome" → Output: 3
+
+function countStr(str){
+   return str.split(' ').length; 
+
+}
+console.log(countStr("JavaScript is awesome"));
+
+
+
+// 0. Check if an Array Contains a Specific Element
+// Write a function that checks if a given value exists in an array.
+function specificElement(arr, num) {
+    return arr.includes(num);
+}
+
+console.log(specificElement([1, 3, 4, 5, 6], 4));
+
+
+
+// now if we use find method then 
+
+function specificElement(arr, num){
+    return arr.find(el => el === num) !== undefined;
+}
+console.log(specificElement([1, 3, 4, 5, 6], 3));
+
+
+
+// . Replace All Occurrences of a Word in a Sentence
+// Input: "I like cats. Cats are cute.", replace "cats" with "dogs".
+
+
+function replaceWord(sentence, oldWord, newWord) {
+    const regex = new RegExp(oldWord, 'gi');
+    return sentence.replace(regex, newWord);
+}
+
+console.log(replaceWord("I like cats. Cats are cute.", "cats", "dogs"));
+
+// with the help of regular expression. g will search globlally, and i will check for case insecitive
