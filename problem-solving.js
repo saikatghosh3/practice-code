@@ -265,3 +265,69 @@ function secondLargest(arr){
     return sorted[1];
 }
 console.log(secondLargest([1,2,3,4,5,6]));
+
+// swap two vaiable without temp
+
+let a = 5; let b = 6;
+
+[a,b] = [b,a]
+
+console.log(a, b);
+
+// Check if a Character is a Vowel or Consonant
+function checkVowel(str){
+    let vowel = "aeiouAEIOU";
+  for(let i = 0; i< str.length; i++){
+    if (vowel.includes(str[i])){
+        return true;
+    }
+  }
+  return false;
+
+}
+
+console.log(checkVowel("love you"));
+console.log(checkVowel("rythm"));
+
+
+// reverse each word in a sentence 
+
+function reverseStr(str){
+   return str.split('').reverse().join('');
+}
+console.log(reverseStr("hello world"));
+
+
+// check if the obj is empty
+function isEmpty (obj){
+    return Object.keys(obj).length === 0 ;
+    
+}
+console.log(isEmpty({})); // true
+console.log(isEmpty({ name: "Saikat" }))
+
+// 26. Merge Two Arrays Without Duplicates
+
+function mergeArray(arr, arr1){
+    const arr2= [...new Set([...arr, ...arr1])];
+    return arr2;
+}
+console.log(mergeArray([1,2,3,4,4,5], [12,3,4,55,5,7]));
+
+
+// sort an array in ascending order
+
+function asenArray(arr){
+    return arr.sort((a,b)=> a - b)
+}
+console.log(asenArray([12,3,4,5,66,7,8]));
+
+
+// for desnding order below program 
+function desenArray(arr){
+    return arr.sort((a,b)=> b - a)
+}
+console.log(desenArray([12,3,4,5,66,7,8]));
+
+// ************ a>b only true or false retun  kore but a-b Positive , negative, and zero er khetre kaj kore 
+
