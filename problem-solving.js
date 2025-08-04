@@ -195,3 +195,73 @@ function replaceWord(sentence, oldWord, newWord) {
 console.log(replaceWord("I like cats. Cats are cute.", "cats", "dogs"));
 
 // with the help of regular expression. g will search globlally, and i will check for case insecitive
+
+
+// remove duplicate form an array
+ function removeDuplicate(arr){
+    return [...new Set(arr)];
+ }
+ console.log(removeDuplicate([1,2,3,3,4,6,5,5,6,7]));
+ 
+
+ // find the maximum number inside array
+
+ function findMax(arr){
+    return Math.max(...arr);
+ }
+ console.log(findMax([1,2,3,4,5,7]));
+
+ // Reverse a number 
+
+function reverseNumber(num) {
+    return parseInt(num.toString().split('').reverse().join(''));
+}
+console.log(reverseNumber(1234));
+
+
+// 4. Check if a Year is a Leap Year
+// Rules:
+// Divisible by 4 → leap
+// But if divisible by 100, not a leap year unless also divisible by 400
+
+function leapYear(num) {
+    if (num % 4 === 0 && (num % 100 !== 0 || num % 400 === 0)) {
+        return "isLeapYear";
+    } else {
+        return "notLeapYear";
+    }
+}
+
+console.log(leapYear(2000)); // isLeapYear
+console.log(leapYear(1900)); // notLeapYear
+console.log(leapYear(1990)); // notLeapYear
+console.log(leapYear(2024)); // isLeapYear
+
+// convert a string to title case
+
+function titleCase(str){
+    return str.split(' ').map(word => word.charAt().toUpperCase() + word.slice(1)).join(' ');
+}
+console.log(titleCase("hello world"));
+
+
+// sum of the digit of the number
+
+function sumDigit(num){
+    let result = 0;
+    let strNum = num.toString();  // convert number to string
+    for(let i = 0; i<strNum.length; i++){
+        result += parseInt(strNum[i]);  // again converting string to num;
+    }
+    return result;
+}
+console.log(sumDigit(2334));
+
+
+// find the second largest number in array 
+
+function secondLargest(arr){
+   const sorted =  arr.sort((a , b)=> b - a)
+    return sorted[1];
+}
+console.log(secondLargest([1,2,3,4,5,6]));
