@@ -397,3 +397,37 @@ for(let word of words){
 }
 
 console.log(longestSentence(" i love javascript"))
+
+// intersection of two array 
+
+function intersection(arr1, arr2){
+   const inter = arr1.filter((item)=> arr2.includes(item))
+   return inter;
+}
+console.log(intersection([1,2,3,4,5], [3,4,5,6]));
+
+
+// 37. Count Occurrences of Each Element in an Array
+Input:["a", "b", "a", "a", "b", "c"] 
+Output: { a: 3, b: 2, c: 1 }
+
+function Occurrences(arr){
+    return arr.reduce((acc, item)=>{
+        acc[item] = (acc[item] || 0) +1;
+        return acc;
+    }, {});
+}
+console.log(Occurrences(["a", "b", "a", "a", "b", "c"]));
+
+
+// check if two string are anagram
+
+function isAnagram(str1, str2){
+    if (str1.split('').sort().join('') === str2.split('').sort().join('')){
+        return true;
+    }else 
+        return false;
+}
+console.log(isAnagram("silent", "listen"));
+
+
