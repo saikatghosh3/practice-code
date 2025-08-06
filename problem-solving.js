@@ -331,3 +331,69 @@ console.log(desenArray([12,3,4,5,66,7,8]));
 
 // ************ a>b only true or false retun  kore but a-b Positive , negative, and zero er khetre kaj kore 
 
+// Find the Average of Numbers in an Array
+// Input: [10, 20, 30] → Output: 20
+
+function avgNumber(arr){
+   const middleIndex = Math.floor(arr.length / 2);
+   return arr[middleIndex];
+}
+console.log(avgNumber([12,3,5]));
+
+// Check if Two Arrays are Equal (Same Elements in Same Order) 
+
+function checkArrays(arr, arr1){
+   if(arr.length !== arr1.length)
+    return false;
+         for(let i = 0; i<arr.length; i++){
+            if(arr[i] !== arr1[i]){
+                return false;
+            }
+         }
+         return true;
+}
+console.log(checkArrays([1,3,4,5], [1,3,4,5]));
+console.log(checkArrays([1,3,4,5], [1,3,4,5,6]));
+
+
+
+//  find all duplicates in  an array
+
+function allDuplicate(arr){
+  const duplicate = arr.filter((item, index)=>arr.indexOf(item) !==index);
+  return [...new Set(duplicate)];
+}
+console.log( allDuplicate([1,2,2,3,3,4,5,6]));
+
+
+// Capitalize the First Letter of Every Word in a Sentence
+
+function capitalize(str) {
+  return str
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+}
+
+console.log(capitalize("hello world")); // "Hello World"
+
+
+
+
+
+// find the longest word in the sentence
+
+function longestSentence(str){
+let words = str.split(" ")
+let longest = " ";
+
+for(let word of words){
+    if(word.length > longest.length){
+        longest = word;
+    }
+}
+    return longest; 
+    
+}
+
+console.log(longestSentence(" i love javascript"))
