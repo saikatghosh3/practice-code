@@ -431,3 +431,57 @@ function isAnagram(str1, str2){
 console.log(isAnagram("silent", "listen"));
 
 
+// Create a Function That Returns the Count of Vowels in a Sentence
+// Input: "JavaScript is awesome" → Output: 7
+
+function countVowels(str){
+    let vowels = 'aeiouAEIOU';
+    let result = 0;
+    for(let i = 0; i<str.length; i++){
+        if (vowels.includes(str[i])){
+          result ++;
+        }
+    }
+    return result;
+}
+console.log(countVowels("Hello World"));
+
+// filter out the users older than 30.
+
+const users = [
+    {name: "saikat", age:25},
+    {name: "ghosh", age: 35},
+    {name: "jhon", age : 44}
+]
+
+const filterAge = users.filter(user => 
+    user.age <= 30
+);
+
+console.log(filterAge);
+
+
+// 47. Convert All Values in an Object to Uppercase
+// Input: {name: "saikat", city: "dhaka"}
+
+ const input = { name: "saikat", city: "dhaka" };
+
+const uppercased = {};
+
+for (let key in input) {
+  const value = input[key];
+  uppercased[key] = typeof value === "string" ? value.toUpperCase() : value;
+}
+
+console.log(uppercased);
+
+
+// Create a Function That Returns the Sum of All Values in an Object
+// Input: {a: 10, b: 20, c: 5} → Output: 35
+
+function sumValue(obj){
+    return Object.values(obj).reduce((sum, value)=> sum + value, 0);
+}
+
+const input = { a: 10, b: 20, c: 5 };
+console.log(sumValue(input));
