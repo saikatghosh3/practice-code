@@ -485,3 +485,112 @@ function sumValue(obj){
 
 const input = { a: 10, b: 20, c: 5 };
 console.log(sumValue(input));
+
+
+
+
+const products = [
+  {name: "Book", price: 200},
+  {name: "Bag", price: 1200},
+  {name: "Pen", price: 20}
+]
+
+const expensive = products.filter(product => product.price> 1000);
+
+console.log(expensive);
+
+
+//  Convert an Array of Key-Value Pairs to an Object
+// Input: [["name", "Saikat"], ["age", 25]] → Output: { name: "Saikat", age: 25 }
+
+const entries = [["name", "Saikat"], ["age", 25]];
+
+const obj = Object.fromEntries(entries);
+
+console.log(obj);
+
+
+//  Find the Sum of All Even Numbers from 1 to N
+
+function sumEven(n){
+    let result = 0;
+    for(let i=0; i<=n; i++){
+        if(i % 2 === 0){
+            result +=i;
+        }
+    }
+    return result;
+}
+
+console.log(sumEven(20));
+
+
+// Return Only Strings from a Mixed Array
+// Input: [1, "apple", 3, "banana", true] → Output: ["apple", "banana"]
+
+
+function mixedString(arr) {
+  const result = arr.filter(item => typeof item === "string");
+  return result;
+}
+
+console.log(mixedString([1, "apple", 3, "banana", true]));
+
+
+
+
+//  Find the First Number Greater Than 50 in an Array
+     function greaterNumber(arr) {
+  return arr.find(item => item > 50);
+}
+console.log(greaterNumber([1,2,3,4,5,99]));
+
+//Multiply All Numbers in an Array
+// Input: [2, 3, 4] → Output: 24
+
+function multiplyNumber(arr){
+   
+return arr.reduce((acc, curr)=> acc * curr , 1)
+}
+console.log(multiplyNumber([2, 3, 4]));
+
+
+
+//  Get All Names from an Array of Objects
+const users =[
+     {name: "Alice", age: 25},
+  {name: "Bob", age: 30}
+]
+
+
+
+
+const  nameAll = users.map(user=> user.name );
+console.log(nameAll);
+
+
+
+//  Find All Numbers Divisible by 3 in an Array
+// Input: [3, 5, 9, 12, 14] → Output: [3, 9, 12]
+
+function divisibleBy(arr){
+    return arr.filter(num => num % 3 === 0 )
+}
+console.log(divisibleBy([3,5,9,12,14]));
+
+
+
+// Create a Function That Checks if All Numbers in an Array Are Positive
+
+
+function allPositive(arr){
+   return arr.filter(num => num > 0);
+}
+console.log(allPositive([1,2,3,4,5,0,-5,-6]));
+
+// the above one is returning the positive number . but if we want output as true or false then the code will be 
+function allPositive(arr) {
+  return arr.every(num => num > 0);
+}
+
+console.log(allPositive([1,2,3,4,5,0,-5,-6]));
