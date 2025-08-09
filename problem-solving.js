@@ -594,3 +594,52 @@ function allPositive(arr) {
 }
 
 console.log(allPositive([1,2,3,4,5,0,-5,-6]));
+
+
+//  Remove All Numbers Less Than 10 from an Array
+// Input: [5, 15, 3, 20] → Output: [15, 20]
+
+function removeNumber(arr){
+    return arr.filter(num=> num<10);
+}
+
+console.log(removeNumber([1,5,66,7,78,8]));
+
+// Find the Square of Each Number in an Array
+// Input: [2, 3, 4] → Output: [4, 9, 16]
+
+
+function squareNumber(arr){
+    return arr.map(num => num * num);
+}
+console.log(squareNumber([1,2,3,4,5]));
+
+
+//  Find the Largest Number in an Array
+// Input: [4, 9, 2, 7] → Output: 9
+
+
+function LargestNum(arr){
+  const num=  arr.sort((a,b)=> b-a);
+   return num[0];
+}
+console.log(LargestNum([4,9,2,7]));
+
+or 
+function LargestNum(arr){
+    return Math.max(...arr)
+}
+console.log(LargestNum([4,9,2,7]));
+
+
+
+// 63. Merge Two Arrays into One
+// Input: [1, 2] and [3, 4] → Output: [1, 2, 3, 4]
+
+
+
+function mergeArray(arr, arr1){
+    const merged = [...arr,...arr1]
+    return merged;
+}
+console.log(mergeArray([1,2], [3,4]));
