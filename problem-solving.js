@@ -643,3 +643,82 @@ function mergeArray(arr, arr1){
     return merged;
 }
 console.log(mergeArray([1,2], [3,4]));
+
+
+// 64. Check if an Array Contains a Specific Number
+// Input: [1, 2, 3], number: 2 → Output: true
+
+function findSpecific (arr, num){
+   if( arr.includes(num)){
+    return true;
+   }
+   else return false;
+}
+console.log(findSpecific([1,2,3],3));
+
+
+//  Find All Even Numbers in an Array
+// Input: [1, 2, 3, 4, 5, 6] → Output: [2, 4, 6]
+
+
+function findEven(arr){
+    return arr.filter(item => item %2 === 0)
+}
+console.log(findEven([1, 2, 3, 4, 5, 6]));
+
+
+// Create a Function That Returns the Average of Numbers in an Array
+// Input: [2, 4, 6] → Output: 4
+
+
+function avarageNumber(arr){
+    return arr.reduce((acc, curr)=> acc + curr , 0)/ arr.length
+}
+
+console.log(avarageNumber([2,4,6]));
+
+//  Replace All Negative Numbers in an Array with 0
+// Input: [4, -1, 6, -3] → Output: [4, 0, 6, 0]
+
+
+
+function replaceNegative(arr){
+    return arr.map(item=> item < 0 ? 0 : item)
+}
+console.log(replaceNegative([4,-1,6, -3]));
+// [ 4, 0, 6, 0 ]
+
+
+// Double Every Number in an Array
+// Input: [1, 2, 3] → Output: [2, 4, 6]
+
+
+function doubleNumber(arr){
+    return arr.map(item => item * 2)
+}
+console.log(doubleNumber([1,2,3]));
+
+
+// . Check if a Number Is Present in an Array Using a Loop
+// Input: [5, 10, 15], number: 10 → Output: true
+
+function checkNumber(arr, num){
+    if (arr.includes(num)){
+return true;
+    }else return false;
+    
+}
+console.log(checkNumber([1,3,4,5], 7));
+
+
+// Create a Function That Returns All Numbers Greater Than a Given Value
+// Input: [10, 20, 30, 5], value: 15 → Output: [20, 30]
+
+
+function greaterNumber(arr){
+    return arr.filter(num=> num > 15);
+}
+console.log(greaterNumber([10,20, 30, 5]));
+
+
+
